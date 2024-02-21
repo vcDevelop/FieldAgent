@@ -3,25 +3,50 @@ package com.example.fieldagent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.fieldagent.databinding.ActivityLoginScreenBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginScreen : AppCompatActivity() {
-    private val binding: ActivityLoginScreenBinding by lazy{
-        ActivityLoginScreenBinding.inflate(layoutInflater)
-    }
+   private lateinit var binding: ActivityLoginScreenBinding
+   private lateinit var firebaseAuth: FirebaseAuth
+
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityLoginScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.loginButton.setOnClickListener{
-            val intent = Intent(this,Dashboard::class.java)
-            startActivity(intent)
-        }
+        firebaseAuth = FirebaseAuth.getInstance()
         binding.createacount.setOnClickListener{
             val intent = Intent(this,SignupScreen::class.java)
             startActivity(intent)
         }
+        binding.loginButton.setOnClickListener{
+            val email = binding.EmailET.text.toString()
+            val  pass = binding.passET.text.toString()
+
+
+            if(email.isNotEmpty() && pass.isNotEmpty() ){
+                firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener{
+                    if(it.isSuccessful){
+                        val intent = Intent(this,Dashboard::class.java)
+                        startActivity(intent)
+                    }else{
+                        Toast.makeText(this,it.exception.toString(), Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }else{
+
+                Toast.makeText(this,"Empty Fields", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+        }
+
 
 
 
     }
-}

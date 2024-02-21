@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Field Agent</string>
+    <string-array name="yes_no_options">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="Jurisdiction">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="maintainacelevel">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+    <string-array name="city_names">
+        <item>Pune</item>
+        <item>Nashik</item>
+        <item>Mumbai</item>
+        <item>Dhule</item>
+        <!-- Add more city names as needed -->
+    </string-array>
+    <string name="city_prompt">Select City</string>
+    <string name="Address_matching">Address Matching</string>
 </resources>

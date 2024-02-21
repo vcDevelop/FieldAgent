@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFF0FC"
+    tools:context=".Add_Client">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/top_background1" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="423dp"
+        android:layout_height="524dp"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <!-- Group 1 -->
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/group1CardView"
+            android:layout_width="wrap_content"
+            android:layout_height="436dp"
+            android:background="#EFF0FC"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_marginStart="18dp"
+                android:id="@+id/group1Layout"
+                android:layout_width="406dp"
+                android:layout_height="436dp"
+                android:orientation="vertical"
+                android:background="#EFF0FC"
+                android:layout_gravity="center_horizontal"
+                >
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:id="@+id/textView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Customer and Bank Details"
+                    android:background="@color/black"
+                    android:textSize="25sp"
+                    android:paddingStart="20dp"
+                    />
+
+                <EditText
+                    android:id="@+id/cust_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textColor="@color/black"
+                    android:hint="Customer Name"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/institute_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Institute Name"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/cust_loantype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Case/Loan Type"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/Contact_person_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Contact Person Name"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/Contact_person_Number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Contact Person Number"
+                    android:inputType="phone"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/Site_visit_Date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Site_Inspection Date"
+                    android:inputType="date"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/Address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Property Address\n "
+                    android:inputType="textPostalAddress"
+                    android:textColorHint="@color/black" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Group 1 -->
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/group2CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:id="@+id/group2Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#EFF0FC"
+                >
+                <!-- EditText fields for Group 1 details -->
+                <!-- For example: -->
+                <TextView
+                    android:paddingStart="20dp"
+                    android:textColor="@color/white"
+                    android:id="@+id/textview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:text="Property Location Details"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/city_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select City:"
+                        android:ems="10"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="10dp"/>
+
+                    <Spinner
+                        android:id="@+id/city_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:entries="@array/city_names"
+                        android:prompt="@string/city_prompt" />
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/Colony"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Colony"
+                    android:inputType="text"
+                    android:textColorHint="@color/black"
+                    />
+
+                <EditText
+                    android:id="@+id/property_address_as_per_site"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Property Address as per site"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/Addressmatching"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Address Matching : "
+                        android:ems="10"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="10dp"/>
+                    <Spinner
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/yes_no_spinner"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/yes_no_options"
+                        android:prompt="@string/Address_matching"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/Jurisdiction_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jurisdiction :"
+                        android:ems="10"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="10dp"/>
+                    <Spinner
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/Jurisdiction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/Jurisdiction"
+                        />
+                </LinearLayout>
+                <!-- Add EditText fields for other details in Group 1 -->
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/group3CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:id="@+id/group3Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/back"
+                >
+                <!-- EditText fields for Group 1 details -->
+                <!-- For example: -->
+                <TextView
+                    android:id="@+id/textView3"
+                    android:paddingStart="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Location Details"
+                    android:background="@color/black"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/landmark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nearby Landmark"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/locality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Locality"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/NearestRailwayStation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nearest Railway Station"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/NearestMetroStation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nearest Metro Station"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/NearestBusStop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nearest Bus Stop"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/widthofroad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Condition and Width of approach Road"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/SiteAccesstext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Site Access :"
+                        android:ems="10"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="10dp"/>
+                    <Spinner
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/site_access"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/Jurisdiction"
+                        android:layout_marginBottom="20dp"
+                        />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/NeighborhoodType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Neighborhood Type"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/NearestHospital"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nearest Hospital"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/Anynegativetothelocality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Any negative to the locality"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/group4CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/back"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:id="@+id/group4Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/back"
+                >
+
+                <TextView
+                    android:background="@color/black"
+                    android:textColor="@color/white"
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Occupancy Details"
+                    android:paddingStart="20dp"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/statusoccupancy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Status of Occupancy :"
+                        android:textSize="16sp"
+                        android:ems="10"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginStart="10dp"/>
+                    <Spinner
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/Statusofoccupancy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/Jurisdiction"
+                        android:layout_marginBottom="20dp"
+                        />
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/Occupied_by"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Occupied by"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/Relationship"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Relationship of occupant with customer"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/OccupiedSince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Occupied Since"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/group5CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            android:background="@color/back"
+            >
+
+            <LinearLayout
+                android:id="@+id/group5Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/back">
+                <!-- EditText fields for Group 1 details -->
+                <!-- For example: -->
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Boundari Details"
+                    android:textSize="25sp"
+                    android:paddingStart="20dp"
+                    android:background="@color/black"
+                    android:textColor="@color/white"/>
+
+                <EditText
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/East"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="East :"
+                    android:inputType="number"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/West"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="West :"
+                    android:inputType="number"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/North"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="North :"
+                    android:inputType="number"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/South"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="South :"
+                    android:inputType="number"
+                    android:textColorHint="@color/black" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/group6CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            android:background="@color/back"
+            >
+
+            <LinearLayout
+                android:id="@+id/group6Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/back">
+                <!-- EditText fields for Group 1 details -->
+                <!-- For example: -->
+                <TextView
+                    android:paddingStart="20dp"
+                    android:background="@color/black"
+                    android:textColor="@color/white"
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Feedback"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/Amenities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Amenities"
+                    android:inputType="text"
+                    android:textColorHint="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/level_of_maintain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maintainance Level :"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="10dp"/>
+                    <Spinner
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/levelofmaintain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/maintainacelevel"
+                        android:layout_marginBottom="20dp"
+                        />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/Age_of_Property"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Age of Property(In years):"
+                    android:inputType="number"
+                    android:textColorHint="@color/black" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <Button
+        android:id="@+id/prevButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prev"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/submit_button"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintStart_toEndOf="@+id/nextButton"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.503" />
+
+    <!-- Add similar CardViews for Group 2, Group 3, Group 4, and Group 5 -->
+
+    <!-- Next Button -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

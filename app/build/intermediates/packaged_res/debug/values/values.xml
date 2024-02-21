@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Jurisdiction">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="city_names">
+        <item>Pune</item>
+        <item>Nashik</item>
+        <item>Mumbai</item>
+        <item>Dhule</item>
+        
+    </string-array>
+    <string-array name="maintainacelevel">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+    <string-array name="yes_no_options">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <color name="back">#EFF0FC</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="Address_matching">Address Matching</string>
+    <string name="app_name">Field Agent</string>
+    <string name="city_prompt">Select City</string>
+    <string name="gcm_defaultSenderId" translatable="false">410080672861</string>
+    <string name="google_api_key" translatable="false">AIzaSyDMipop3sN7xSyK5v_rgGaDZMczHUs4b48</string>
+    <string name="google_app_id" translatable="false">1:410080672861:android:c9d8927682e964bcef21b4</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDMipop3sN7xSyK5v_rgGaDZMczHUs4b48</string>
+    <string name="google_storage_bucket" translatable="false">fieldagent-1bcfc.appspot.com</string>
+    <string name="project_id" translatable="false">fieldagent-1bcfc</string>
+    <style name="Base.Theme.FieldAgent" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.FieldAgent" parent="Base.Theme.FieldAgent"/>
+</resources>
