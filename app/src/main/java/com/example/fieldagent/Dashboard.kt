@@ -3,6 +3,7 @@ package com.example.fieldagent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,7 +15,7 @@ import com.google.firebase.firestore.toObject
 
 
 class Dashboard : AppCompatActivity() {
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var clientRecyclerView: RecyclerView
     private lateinit var userList:ArrayList<User>
     private lateinit var binding: ActivityDashboardBinding
     private lateinit var showName:TextView
@@ -26,33 +27,13 @@ class Dashboard : AppCompatActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager= LinearLayoutManager(this)
-
         userList = arrayListOf()
         auth = FirebaseAuth.getInstance()
         fStore=FirebaseFirestore.getInstance()
+        clientRecyclerView = findViewById(R.id.clientRecyclerView)
+        loadClients()
+
         val userId = auth.currentUser?.uid
-
-
-        val collectionReference = fStore.collection("users").document(userId!!).collection("clients")
-
-        collectionReference.get()
-            .addOnSuccessListener{
-              if(!it.isEmpty){
-                  for (data in it.documents){
-                      val user:User? = data.toObject(User::class.java)
-
-                      if(user != null ){
-                          userList.add(user)
-                      }
-                  }
-                  recyclerView.adapter = MyAdaptor(userList)
-              }
-            }
-            .addOnFailureListener{
-                Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
-            }
 
 
         showName = findViewById(R.id.AgentName)
@@ -74,6 +55,7 @@ class Dashboard : AppCompatActivity() {
         }
 
 
+
         binding.Paymentdash.setOnClickListener{
             val intent = Intent(this,ReimbursementScreen::class.java)
             startActivity(intent)
@@ -84,4 +66,49 @@ class Dashboard : AppCompatActivity() {
             startActivity(intent)
         }
     }
+    private fun loadClients() {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            fStore.collection("users").document(userId)
+                .collection("clients")
+                .get()
+                .addOnSuccessListener { result ->
+                    val clientIds = result.documents.map { it.id }
+                    setupRecyclerView(clientIds)
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("LoadClients", "Error loading clients", exception)
+                    // Handle errors
+                }
+        }
+    }
+
+//    private fun setupRecyclerView(clients: List<Clients>) {
+//        val adapter = ClientAdapter(clients) { clientId ->
+//            // Handle item click, open a new activity with the selected clientId
+//            val intent = Intent(this, CustDetail::class.java)
+//            intent.putExtra("clientId", clientId)
+//            startActivity(intent)
+//        }
+//
+//
+//    }
+private fun setupRecyclerView(clientIds: List<String>) {
+    val adapter = ClientAdapter(clientIds) { clientId ->
+        // Handle item click, open a new activity with the selected clientId
+        val intent = Intent(this, CustDetail::class.java)
+        intent.putExtra("clientId", clientId)
+        startActivity(intent)
+    }
+
+    clientRecyclerView.layoutManager = LinearLayoutManager(this)
+    clientRecyclerView.adapter = adapter
 }
+    }
+
+    // Handle item click, open a new activity with the selected clientId
+
+
+
+
+

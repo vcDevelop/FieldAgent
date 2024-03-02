@@ -32,6 +32,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.FieldAgent" >
         <activity
+            android:name="com.example.fieldagent.CustDetail"
+            android:exported="false" />
+        <activity
             android:name="com.example.fieldagent.Add_Client"
             android:exported="false" />
         <activity

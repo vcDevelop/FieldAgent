@@ -1,5 +1,6 @@
 package com.example.fieldagent
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -32,7 +33,7 @@ class LoginScreen : AppCompatActivity() {
             if(email.isNotEmpty() && pass.isNotEmpty() ){
                 firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener{
                     if(it.isSuccessful){
-                        val intent = Intent(this,Dashboard::class.java)
+                        val intent = Intent(this, Dashboard::class.java)
                         startActivity(intent)
                     }else{
                         Toast.makeText(this,it.exception.toString(), Toast.LENGTH_SHORT).show()

@@ -3201,10 +3201,11 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id Selected_city
 id Setting_dash
 id Signupbutton
 id SiteAccesstext
-id Site_visit_Date
+id SiteInspectionDate
 id South
 id Statusofoccupancy
 id TOP_END
@@ -3268,6 +3269,9 @@ id actions
 id activity_chooser_view_content
 id add
 id addRowButton
+id address
+id address1
+id address_matching
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3303,6 +3307,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id button
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3323,6 +3328,7 @@ id circle_center
 id city_label
 id city_spinner
 id clear_text
+id clientRecyclerView
 id clip_horizontal
 id clip_vertical
 id clockwise
@@ -3344,11 +3350,12 @@ id counterclockwise
 id cradle
 id createacount
 id currentState
-id cus_name
 id cust_loantype
 id cust_name
+id cust_name1
 id custom
 id customPanel
+id customer_name
 id cut
 id dark
 id date_picker_actions
@@ -3460,7 +3467,6 @@ id immediateStop
 id included
 id indeterminate
 id info
-id instit_name
 id institute_name
 id invisible
 id inward
@@ -3611,7 +3617,6 @@ id property_address_as_per_site
 id radio
 id ratio
 id rectangles
-id recyclerView
 id report_drawn
 id reverseSawtooth
 id right
@@ -3651,6 +3656,7 @@ id showHome
 id showTitle
 id sin
 id site_access
+id site_visit_Date
 id skipCollapsed
 id skipped
 id slide
@@ -3891,6 +3897,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_client
+layout activity_cust_detail
 layout activity_dashboard
 layout activity_login_screen
 layout activity_main

@@ -4,20 +4,20 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_add_client.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-mergeDebugResources-35:\\layout\\activity_reimbursement_screen.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_reimbursement_screen.xml"
+        "merged": "com.example.fieldagent.app-mergeDebugResources-35:/layout/activity_cust_detail.xml",
+        "source": "com.example.fieldagent.app-main-38:/layout/activity_cust_detail.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-mergeDebugResources-35:\\layout\\activity_splash_screen.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_splash_screen.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-mergeDebugResources-35:\\layout\\activity_reimbursement_screen.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_reimbursement_screen.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-mergeDebugResources-35:\\layout\\activity_login_screen.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_login_screen.xml"
     },
     {
-        "merged": "com.example.fieldagent.app-mergeDebugResources-35:/layout/activity_add_client.xml",
-        "source": "com.example.fieldagent.app-main-38:/layout/activity_add_client.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-mergeDebugResources-35:\\layout\\activity_splash_screen.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_splash_screen.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-mergeDebugResources-35:\\layout\\activity_dashboard.xml",
@@ -36,11 +36,11 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\list_item.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-mergeDebugResources-35:\\layout\\activity_signup_screen.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_signup_screen.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-mergeDebugResources-35:\\layout\\activity_cust_detail.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_cust_detail.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-mergeDebugResources-35:\\layout\\activity_payment.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_payment.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-mergeDebugResources-35:\\layout\\activity_signup_screen.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_signup_screen.xml"
     }
 ]

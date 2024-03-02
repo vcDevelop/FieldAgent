@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:2:1-47:12
+ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:2:1-50:12
 MERGED from [androidx.databinding:viewbinding:8.2.2] C:\Users\DELL\.gradle\caches\transforms-3\be7926fd6eea9a0889beb021035f33c0\transformed\viewbinding-8.2.2\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\DELL\.gradle\caches\transforms-3\69a441a0435274e720be05ba5602f9b4\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\DELL\.gradle\caches\transforms-3\ccb0548c3e0ed27e73465f31aade944a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -75,8 +75,8 @@ MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\DEL
 	xmlns:android
 		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:5:5-45:19
-INJECTED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:5:5-45:19
+ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:5:5-48:19
+INJECTED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:5:5-48:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\DELL\.gradle\caches\transforms-3\69a441a0435274e720be05ba5602f9b4\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\DELL\.gradle\caches\transforms-3\69a441a0435274e720be05ba5602f9b4\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\DELL\.gradle\caches\transforms-3\ccb0548c3e0ed27e73465f31aade944a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -137,64 +137,70 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\DELL\.gradle\cache
 		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:13:9-48
 	android:dataExtractionRules
 		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:7:9-65
-activity#com.example.fieldagent.Add_Client
+activity#com.example.fieldagent.CustDetail
 ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:15:9-17:40
 	android:exported
 		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:17:13-37
 	android:name
 		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:16:13-39
-activity#com.example.fieldagent.ReimbursementScreen
+activity#com.example.fieldagent.Add_Client
 ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:18:9-20:40
 	android:exported
 		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:19:13-48
-activity#com.example.fieldagent.SubmittedCasesScreen
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:19:13-39
+activity#com.example.fieldagent.ReimbursementScreen
 ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:21:9-23:40
 	android:exported
 		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:23:13-37
 	android:name
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:22:13-49
-activity#com.example.fieldagent.Dashboard
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:22:13-48
+activity#com.example.fieldagent.SubmittedCasesScreen
 ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:24:9-26:40
 	android:exported
 		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:26:13-37
 	android:name
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:25:13-38
-activity#com.example.fieldagent.SignupScreen
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:25:13-49
+activity#com.example.fieldagent.Dashboard
 ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:27:9-29:40
 	android:exported
 		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:29:13-37
 	android:name
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:28:13-41
-activity#com.example.fieldagent.LoginScreen
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:28:13-38
+activity#com.example.fieldagent.SignupScreen
 ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:30:9-32:40
 	android:exported
 		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:31:13-40
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:31:13-41
+activity#com.example.fieldagent.LoginScreen
+ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:33:9-35:40
+	android:exported
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:34:13-40
 activity#com.example.fieldagent.SplashScreen
-ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:33:9-41:20
+ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:36:9-44:20
 	android:exported
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:35:13-36
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:38:13-36
 	android:name
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:34:13-41
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:37:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:36:13-40:29
+ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:39:13-43:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:37:17-69
+ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:40:17-69
 	android:name
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:37:25-66
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:40:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:39:17-77
+ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:42:17-77
 	android:name
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:39:27-74
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:42:27-74
 activity#com.example.fieldagent.MainActivity
-ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:42:9-44:39
+ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:45:9-47:39
 	android:exported
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:44:13-36
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:47:13-36
 	android:name
-		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:43:13-41
+		ADDED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml:46:13-41
 uses-sdk
 INJECTED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\DELL\AndroidStudioProjects\FieldAgent\app\src\main\AndroidManifest.xml

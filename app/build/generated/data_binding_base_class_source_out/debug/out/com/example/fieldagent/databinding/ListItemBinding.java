@@ -20,16 +20,16 @@ public final class ListItemBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
-  public final TextView cusName;
+  public final TextView address;
 
   @NonNull
-  public final TextView institName;
+  public final TextView custName;
 
-  private ListItemBinding(@NonNull CardView rootView, @NonNull TextView cusName,
-      @NonNull TextView institName) {
+  private ListItemBinding(@NonNull CardView rootView, @NonNull TextView address,
+      @NonNull TextView custName) {
     this.rootView = rootView;
-    this.cusName = cusName;
-    this.institName = institName;
+    this.address = address;
+    this.custName = custName;
   }
 
   @Override
@@ -59,19 +59,19 @@ public final class ListItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cus_name;
-      TextView cusName = ViewBindings.findChildViewById(rootView, id);
-      if (cusName == null) {
+      id = R.id.address;
+      TextView address = ViewBindings.findChildViewById(rootView, id);
+      if (address == null) {
         break missingId;
       }
 
-      id = R.id.instit_name;
-      TextView institName = ViewBindings.findChildViewById(rootView, id);
-      if (institName == null) {
+      id = R.id.cust_name;
+      TextView custName = ViewBindings.findChildViewById(rootView, id);
+      if (custName == null) {
         break missingId;
       }
 
-      return new ListItemBinding((CardView) rootView, cusName, institName);
+      return new ListItemBinding((CardView) rootView, address, custName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

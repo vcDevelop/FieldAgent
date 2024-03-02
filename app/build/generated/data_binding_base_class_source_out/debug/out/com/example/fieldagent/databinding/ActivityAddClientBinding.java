@@ -89,9 +89,6 @@ public final class ActivityAddClientBinding implements ViewBinding {
   public final TextView SiteAccesstext;
 
   @NonNull
-  public final EditText SiteVisitDate;
-
-  @NonNull
   public final EditText South;
 
   @NonNull
@@ -99,6 +96,9 @@ public final class ActivityAddClientBinding implements ViewBinding {
 
   @NonNull
   public final EditText West;
+
+  @NonNull
+  public final Button button;
 
   @NonNull
   public final TextView cityLabel;
@@ -182,6 +182,9 @@ public final class ActivityAddClientBinding implements ViewBinding {
   public final Spinner siteAccess;
 
   @NonNull
+  public final TextView siteVisitDate;
+
+  @NonNull
   public final TextView statusoccupancy;
 
   @NonNull
@@ -220,10 +223,10 @@ public final class ActivityAddClientBinding implements ViewBinding {
       @NonNull EditText NearestHospital, @NonNull EditText NearestMetroStation,
       @NonNull EditText NearestRailwayStation, @NonNull EditText NeighborhoodType,
       @NonNull EditText North, @NonNull EditText OccupiedBy, @NonNull EditText OccupiedSince,
-      @NonNull EditText Relationship, @NonNull TextView SiteAccesstext,
-      @NonNull EditText SiteVisitDate, @NonNull EditText South, @NonNull Spinner Statusofoccupancy,
-      @NonNull EditText West, @NonNull TextView cityLabel, @NonNull Spinner citySpinner,
-      @NonNull EditText custLoantype, @NonNull EditText custName, @NonNull CardView group1CardView,
+      @NonNull EditText Relationship, @NonNull TextView SiteAccesstext, @NonNull EditText South,
+      @NonNull Spinner Statusofoccupancy, @NonNull EditText West, @NonNull Button button,
+      @NonNull TextView cityLabel, @NonNull Spinner citySpinner, @NonNull EditText custLoantype,
+      @NonNull EditText custName, @NonNull CardView group1CardView,
       @NonNull LinearLayout group1Layout, @NonNull CardView group2CardView,
       @NonNull LinearLayout group2Layout, @NonNull CardView group3CardView,
       @NonNull LinearLayout group3Layout, @NonNull CardView group4CardView,
@@ -234,10 +237,11 @@ public final class ActivityAddClientBinding implements ViewBinding {
       @NonNull TextView levelOfMaintain, @NonNull Spinner levelofmaintain,
       @NonNull LinearLayout linearLayout2, @NonNull EditText locality, @NonNull Button nextButton,
       @NonNull Button prevButton, @NonNull EditText propertyAddressAsPerSite,
-      @NonNull Spinner siteAccess, @NonNull TextView statusoccupancy, @NonNull Button submitButton,
-      @NonNull TextView textView1, @NonNull TextView textView3, @NonNull TextView textView4,
-      @NonNull TextView textView5, @NonNull TextView textView6, @NonNull TextView textview2,
-      @NonNull EditText widthofroad, @NonNull Spinner yesNoSpinner) {
+      @NonNull Spinner siteAccess, @NonNull TextView siteVisitDate,
+      @NonNull TextView statusoccupancy, @NonNull Button submitButton, @NonNull TextView textView1,
+      @NonNull TextView textView3, @NonNull TextView textView4, @NonNull TextView textView5,
+      @NonNull TextView textView6, @NonNull TextView textview2, @NonNull EditText widthofroad,
+      @NonNull Spinner yesNoSpinner) {
     this.rootView = rootView;
     this.Address = Address;
     this.Addressmatching = Addressmatching;
@@ -260,10 +264,10 @@ public final class ActivityAddClientBinding implements ViewBinding {
     this.OccupiedSince = OccupiedSince;
     this.Relationship = Relationship;
     this.SiteAccesstext = SiteAccesstext;
-    this.SiteVisitDate = SiteVisitDate;
     this.South = South;
     this.Statusofoccupancy = Statusofoccupancy;
     this.West = West;
+    this.button = button;
     this.cityLabel = cityLabel;
     this.citySpinner = citySpinner;
     this.custLoantype = custLoantype;
@@ -291,6 +295,7 @@ public final class ActivityAddClientBinding implements ViewBinding {
     this.prevButton = prevButton;
     this.propertyAddressAsPerSite = propertyAddressAsPerSite;
     this.siteAccess = siteAccess;
+    this.siteVisitDate = siteVisitDate;
     this.statusoccupancy = statusoccupancy;
     this.submitButton = submitButton;
     this.textView1 = textView1;
@@ -456,12 +461,6 @@ public final class ActivityAddClientBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.Site_visit_Date;
-      EditText SiteVisitDate = ViewBindings.findChildViewById(rootView, id);
-      if (SiteVisitDate == null) {
-        break missingId;
-      }
-
       id = R.id.South;
       EditText South = ViewBindings.findChildViewById(rootView, id);
       if (South == null) {
@@ -477,6 +476,12 @@ public final class ActivityAddClientBinding implements ViewBinding {
       id = R.id.West;
       EditText West = ViewBindings.findChildViewById(rootView, id);
       if (West == null) {
+        break missingId;
+      }
+
+      id = R.id.button;
+      Button button = ViewBindings.findChildViewById(rootView, id);
+      if (button == null) {
         break missingId;
       }
 
@@ -642,6 +647,12 @@ public final class ActivityAddClientBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.site_visit_Date;
+      TextView siteVisitDate = ViewBindings.findChildViewById(rootView, id);
+      if (siteVisitDate == null) {
+        break missingId;
+      }
+
       id = R.id.statusoccupancy;
       TextView statusoccupancy = ViewBindings.findChildViewById(rootView, id);
       if (statusoccupancy == null) {
@@ -706,12 +717,12 @@ public final class ActivityAddClientBinding implements ViewBinding {
           AgeOfProperty, Amenities, Anynegativetothelocality, Colony, ContactPersonName,
           ContactPersonNumber, East, Jurisdiction, JurisdictionText, NearestBusStop,
           NearestHospital, NearestMetroStation, NearestRailwayStation, NeighborhoodType, North,
-          OccupiedBy, OccupiedSince, Relationship, SiteAccesstext, SiteVisitDate, South,
-          Statusofoccupancy, West, cityLabel, citySpinner, custLoantype, custName, group1CardView,
-          group1Layout, group2CardView, group2Layout, group3CardView, group3Layout, group4CardView,
-          group4Layout, group5CardView, group5Layout, group6CardView, group6Layout, imageView2,
-          instituteName, landmark, levelOfMaintain, levelofmaintain, linearLayout2, locality,
-          nextButton, prevButton, propertyAddressAsPerSite, siteAccess, statusoccupancy,
+          OccupiedBy, OccupiedSince, Relationship, SiteAccesstext, South, Statusofoccupancy, West,
+          button, cityLabel, citySpinner, custLoantype, custName, group1CardView, group1Layout,
+          group2CardView, group2Layout, group3CardView, group3Layout, group4CardView, group4Layout,
+          group5CardView, group5Layout, group6CardView, group6Layout, imageView2, instituteName,
+          landmark, levelOfMaintain, levelofmaintain, linearLayout2, locality, nextButton,
+          prevButton, propertyAddressAsPerSite, siteAccess, siteVisitDate, statusoccupancy,
           submitButton, textView1, textView3, textView4, textView5, textView6, textview2,
           widthofroad, yesNoSpinner);
     }

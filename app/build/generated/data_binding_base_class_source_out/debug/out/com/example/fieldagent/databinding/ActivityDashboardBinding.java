@@ -44,6 +44,9 @@ public final class ActivityDashboardBinding implements ViewBinding {
   public final TextView bell;
 
   @NonNull
+  public final RecyclerView clientRecyclerView;
+
+  @NonNull
   public final ConstraintLayout constraintLayout;
 
   @NonNull
@@ -71,9 +74,6 @@ public final class ActivityDashboardBinding implements ViewBinding {
   public final TextView money;
 
   @NonNull
-  public final RecyclerView recyclerView;
-
-  @NonNull
   public final TextView textView10;
 
   @NonNull
@@ -94,12 +94,12 @@ public final class ActivityDashboardBinding implements ViewBinding {
   private ActivityDashboardBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView AddClient,
       @NonNull TextView AgentName, @NonNull TextView Hello, @NonNull TextView Home,
       @NonNull ImageView Paymentdash, @NonNull ImageView SettingDash, @NonNull TextView bell,
-      @NonNull ConstraintLayout constraintLayout, @NonNull CoordinatorLayout coordinatorLayout,
-      @NonNull ImageView imageView1, @NonNull ImageView imageView10, @NonNull ImageView imageView13,
-      @NonNull ImageView imageView4, @NonNull ImageView imageView8, @NonNull ImageView listDash,
-      @NonNull TextView money, @NonNull RecyclerView recyclerView, @NonNull TextView textView10,
-      @NonNull TextView textView100, @NonNull TextView textView2, @NonNull TextView textView4,
-      @NonNull TextView textView8, @NonNull TextView word) {
+      @NonNull RecyclerView clientRecyclerView, @NonNull ConstraintLayout constraintLayout,
+      @NonNull CoordinatorLayout coordinatorLayout, @NonNull ImageView imageView1,
+      @NonNull ImageView imageView10, @NonNull ImageView imageView13, @NonNull ImageView imageView4,
+      @NonNull ImageView imageView8, @NonNull ImageView listDash, @NonNull TextView money,
+      @NonNull TextView textView10, @NonNull TextView textView100, @NonNull TextView textView2,
+      @NonNull TextView textView4, @NonNull TextView textView8, @NonNull TextView word) {
     this.rootView = rootView;
     this.AddClient = AddClient;
     this.AgentName = AgentName;
@@ -108,6 +108,7 @@ public final class ActivityDashboardBinding implements ViewBinding {
     this.Paymentdash = Paymentdash;
     this.SettingDash = SettingDash;
     this.bell = bell;
+    this.clientRecyclerView = clientRecyclerView;
     this.constraintLayout = constraintLayout;
     this.coordinatorLayout = coordinatorLayout;
     this.imageView1 = imageView1;
@@ -117,7 +118,6 @@ public final class ActivityDashboardBinding implements ViewBinding {
     this.imageView8 = imageView8;
     this.listDash = listDash;
     this.money = money;
-    this.recyclerView = recyclerView;
     this.textView10 = textView10;
     this.textView100 = textView100;
     this.textView2 = textView2;
@@ -195,6 +195,12 @@ public final class ActivityDashboardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.clientRecyclerView;
+      RecyclerView clientRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (clientRecyclerView == null) {
+        break missingId;
+      }
+
       id = R.id.constraintLayout;
       ConstraintLayout constraintLayout = ViewBindings.findChildViewById(rootView, id);
       if (constraintLayout == null) {
@@ -249,12 +255,6 @@ public final class ActivityDashboardBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.recyclerView;
-      RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerView == null) {
-        break missingId;
-      }
-
       id = R.id.textView10;
       TextView textView10 = ViewBindings.findChildViewById(rootView, id);
       if (textView10 == null) {
@@ -292,9 +292,9 @@ public final class ActivityDashboardBinding implements ViewBinding {
       }
 
       return new ActivityDashboardBinding((ConstraintLayout) rootView, AddClient, AgentName, Hello,
-          Home, Paymentdash, SettingDash, bell, constraintLayout, coordinatorLayout, imageView1,
-          imageView10, imageView13, imageView4, imageView8, listDash, money, recyclerView,
-          textView10, textView100, textView2, textView4, textView8, word);
+          Home, Paymentdash, SettingDash, bell, clientRecyclerView, constraintLayout,
+          coordinatorLayout, imageView1, imageView10, imageView13, imageView4, imageView8, listDash,
+          money, textView10, textView100, textView2, textView4, textView8, word);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
