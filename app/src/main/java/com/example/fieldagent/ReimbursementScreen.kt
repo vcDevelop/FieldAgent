@@ -1,5 +1,6 @@
 package com.example.fieldagent
 import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -118,7 +119,7 @@ class ReimbursementScreen : AppCompatActivity() {
             .collection("clients").document(clientId)
             .collection("reimburse").add(reimbursementData)
             .addOnSuccessListener {
-                Toast.makeText(this, "Data added successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Request added successfully", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Error adding data: ${e.message}", Toast.LENGTH_SHORT).show()

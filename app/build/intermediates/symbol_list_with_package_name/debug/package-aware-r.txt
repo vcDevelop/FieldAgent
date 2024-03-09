@@ -3156,6 +3156,7 @@ drawable profile
 drawable rebutton
 drawable reject
 drawable reject1
+drawable rounded_background
 drawable search_edittext
 drawable search_icon
 drawable test_level_drawable
@@ -3184,6 +3185,7 @@ id Colony
 id ConfirmpassET
 id Contact_person_Number
 id Contact_person_name
+id Delete
 id East
 id EmailET
 id EmailForgot
@@ -3749,7 +3751,6 @@ id title_template
 id toggle
 id top
 id topPanel
-id totalClientsLayout
 id touch_outside
 id transitionToEnd
 id transitionToStart

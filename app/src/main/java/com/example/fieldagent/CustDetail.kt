@@ -75,7 +75,7 @@ class CustDetail : AppCompatActivity() {
             findViewById<TextView>(R.id.NeighborhoodType).text = client.neighborhood_type
             findViewById<TextView>(R.id.SiteAccesstext).text = client.site_access
 
-            findViewById<TextView>(R.id.Statusofoccupancy).text = client.status_of_occupany
+            findViewById<TextView>(R.id.Statusofoccupancy).text = client.status_of_occupancy
             findViewById<TextView>(R.id.occupied_by).text = client.occupied_by
             findViewById<TextView>(R.id.OccupiedSince).text = client.occupied_since
             findViewById<TextView>(R.id.Relationship).text = client.relationship
@@ -87,6 +87,7 @@ class CustDetail : AppCompatActivity() {
 
             findViewById<TextView>(R.id.level_of_maintain).text = client.level_of_maintain
             findViewById<TextView>(R.id.Age_of_Property).text = client.age_of_property
+            findViewById<TextView>(R.id.Amenities).text = client.amenities
 
         }
     }

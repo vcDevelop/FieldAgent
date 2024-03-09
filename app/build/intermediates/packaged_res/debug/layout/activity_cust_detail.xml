@@ -13,6 +13,7 @@
 
 
         <LinearLayout
+            android:background="@color/back"
             android:layout_width="409dp"
             android:layout_height="729dp"
             android:orientation="vertical"
@@ -62,6 +63,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Customer Name :"
                     android:textStyle="bold" />
 
@@ -71,6 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView"
+                    android:textColor="@color/black"
                     android:textAlignment="textStart"
                     />
 
@@ -87,6 +90,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Institue Name:"
                     android:textStyle="bold" />
 
@@ -96,6 +100,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView"
+                    android:textColor="@color/black"
                     android:textAlignment="textStart"/>
 
             </LinearLayout>
@@ -111,6 +116,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Customer loanType:"
                     android:textStyle="bold" />
 
@@ -120,6 +126,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView"
+                    android:textColor="@color/black"
                     android:textAlignment="textStart"
                     />
 
@@ -136,6 +143,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Contact_person_name:"
                     android:textStyle="bold" />
 
@@ -144,6 +152,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="TextView" />
 
             </LinearLayout>
@@ -159,12 +168,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Contact_person_number:"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Contact_person_Number"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -183,6 +194,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Address :"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <TextView
@@ -190,6 +202,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="TextView" />
 
 
@@ -229,12 +242,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Selected_city :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Selected_city"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -253,11 +268,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Colony :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Colony"
+                    android:textColor="@color/black"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -276,12 +293,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Property Address as per site :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/property_address_as_per_site"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -298,12 +317,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Address matching :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/address_matching"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -321,6 +342,7 @@
                 <TextView
 
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Jurisdiction"
@@ -329,6 +351,7 @@
                 <TextView
                     android:id="@+id/Jurisdiction"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -368,12 +391,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Nearby Landmark :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/landmark"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -387,8 +412,8 @@
 
 
                 <TextView
-
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Locality :"
@@ -396,6 +421,7 @@
 
                 <TextView
                     android:id="@+id/locality"
+                    android:textColor="@color/black"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -412,6 +438,7 @@
                 <TextView
 
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Nearest Railway Station :"
@@ -419,6 +446,7 @@
 
                 <TextView
                     android:id="@+id/NearestRailwayStation"
+                    android:textColor="@color/black"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -437,12 +465,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Nearest Metro Station :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/NearestMetroStation"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -460,12 +490,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Nearest bus stop :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/NearestBusStop"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -483,12 +515,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Condition and width of Road :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/widthofroad"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -508,12 +542,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Nearest Hospital :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/NearestHospital"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -532,12 +568,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Any negative to the locality :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Anynegativetothelocality"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -555,12 +593,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Neighborhood Type :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/NeighborhoodType"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -578,12 +618,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Site Access :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/SiteAccesstext"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -599,6 +641,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:background="#0B60B0"
@@ -623,12 +666,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Status of Occupancy :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Statusofoccupancy"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -647,6 +692,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Occupied by :"
                     android:textStyle="bold" />
 
@@ -655,6 +701,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="TextView" />
 
             </LinearLayout>
@@ -669,12 +716,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Relationship of occupant with customer :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Relationship"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -692,12 +741,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Occupied Since :"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/OccupiedSince"
                     android:layout_width="0dp"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
@@ -737,10 +788,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="East :"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/East"
+                    android:textColor="@color/black"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -760,6 +813,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="West :"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <TextView
@@ -767,6 +821,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="TextView" />
 
             </LinearLayout>
@@ -783,6 +838,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="North :"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <TextView
@@ -790,6 +846,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="TextView" />
 
             </LinearLayout>
@@ -806,6 +863,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="South :"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <TextView
@@ -813,6 +871,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="TextView" />
 
             </LinearLayout>
@@ -851,6 +910,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Amenities :"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <TextView
@@ -858,6 +918,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="TextView" />
 
             </LinearLayout>
@@ -873,6 +934,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Maintainance Level :"
                     android:textStyle="bold" />
 
@@ -881,6 +943,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="TextView" />
 
             </LinearLayout>
@@ -894,6 +957,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Age of property :"
                     android:textStyle="bold" />
 
@@ -902,6 +966,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="TextView"
                     android:textStyle="bold" />
 

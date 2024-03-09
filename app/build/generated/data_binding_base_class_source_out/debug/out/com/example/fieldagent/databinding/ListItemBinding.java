@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +25,9 @@ public final class ListItemBinding implements ViewBinding {
   public final TextView ContactPersonNumber;
 
   @NonNull
+  public final ImageButton Delete;
+
+  @NonNull
   public final Button Paymentdash;
 
   @NonNull
@@ -36,10 +40,11 @@ public final class ListItemBinding implements ViewBinding {
   public final TextView instituteName;
 
   private ListItemBinding(@NonNull MaterialCardView rootView, @NonNull TextView ContactPersonNumber,
-      @NonNull Button Paymentdash, @NonNull Button ReimburseDetails, @NonNull TextView custName,
-      @NonNull TextView instituteName) {
+      @NonNull ImageButton Delete, @NonNull Button Paymentdash, @NonNull Button ReimburseDetails,
+      @NonNull TextView custName, @NonNull TextView instituteName) {
     this.rootView = rootView;
     this.ContactPersonNumber = ContactPersonNumber;
+    this.Delete = Delete;
     this.Paymentdash = Paymentdash;
     this.ReimburseDetails = ReimburseDetails;
     this.custName = custName;
@@ -79,6 +84,12 @@ public final class ListItemBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Delete;
+      ImageButton Delete = ViewBindings.findChildViewById(rootView, id);
+      if (Delete == null) {
+        break missingId;
+      }
+
       id = R.id.Paymentdash;
       Button Paymentdash = ViewBindings.findChildViewById(rootView, id);
       if (Paymentdash == null) {
@@ -103,8 +114,8 @@ public final class ListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ListItemBinding((MaterialCardView) rootView, ContactPersonNumber, Paymentdash,
-          ReimburseDetails, custName, instituteName);
+      return new ListItemBinding((MaterialCardView) rootView, ContactPersonNumber, Delete,
+          Paymentdash, ReimburseDetails, custName, instituteName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

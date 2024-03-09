@@ -37,7 +37,7 @@ data class Clients(
     var selected_city:String?=null,
     var site_access:String?=null,
     var site_inspection_date:String?=null,
-    var status_of_occupany:String?=null,
+    var status_of_occupancy:String?=null,
     var width_of_road:String?=null,
 
 

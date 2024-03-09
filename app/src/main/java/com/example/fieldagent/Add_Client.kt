@@ -2,6 +2,7 @@ package com.example.fieldagent
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -127,6 +128,8 @@ class Add_Client : AppCompatActivity() {
                 .add(data)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Data added to Firestore successfully", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,Dashboard::class.java)
+                    startActivity(intent)
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Error adding data to Firestore: $e", Toast.LENGTH_SHORT).show()

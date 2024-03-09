@@ -80,7 +80,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Expense Name"
-                        android:textColor="@color/back"
+                        android:textColor="@color/black"
                         android:textColorHint="@color/black"
                         />
 
@@ -89,6 +89,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Number of Days"
+                        android:textColor="@color/black"
                         android:textColorHint="@color/black"
                         />
 
@@ -98,6 +99,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Receving Bill: "
+                        android:textColor="@color/black"
                         android:textColorHint="@color/black"
                         />
 
@@ -106,6 +108,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Amount : "
+                        android:textColor="@color/black"
                         android:textColorHint="@color/black"
                         />
 

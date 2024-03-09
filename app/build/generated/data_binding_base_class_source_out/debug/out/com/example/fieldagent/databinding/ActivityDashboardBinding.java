@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -56,15 +55,11 @@ public final class ActivityDashboardBinding implements ViewBinding {
   @NonNull
   public final TextView textView8;
 
-  @NonNull
-  public final LinearLayout totalClientsLayout;
-
   private ActivityDashboardBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView AddClient,
       @NonNull TextView AgentName, @NonNull TextView Hello, @NonNull TextView TotalClients,
       @NonNull RecyclerView clientRecyclerView, @NonNull ConstraintLayout constraintLayout,
       @NonNull CoordinatorLayout coordinatorLayout, @NonNull ImageView imageView4,
-      @NonNull ImageView logoutIcon, @NonNull TextView money, @NonNull TextView textView8,
-      @NonNull LinearLayout totalClientsLayout) {
+      @NonNull ImageView logoutIcon, @NonNull TextView money, @NonNull TextView textView8) {
     this.rootView = rootView;
     this.AddClient = AddClient;
     this.AgentName = AgentName;
@@ -77,7 +72,6 @@ public final class ActivityDashboardBinding implements ViewBinding {
     this.logoutIcon = logoutIcon;
     this.money = money;
     this.textView8 = textView8;
-    this.totalClientsLayout = totalClientsLayout;
   }
 
   @Override
@@ -173,15 +167,9 @@ public final class ActivityDashboardBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.totalClientsLayout;
-      LinearLayout totalClientsLayout = ViewBindings.findChildViewById(rootView, id);
-      if (totalClientsLayout == null) {
-        break missingId;
-      }
-
       return new ActivityDashboardBinding((ConstraintLayout) rootView, AddClient, AgentName, Hello,
           TotalClients, clientRecyclerView, constraintLayout, coordinatorLayout, imageView4,
-          logoutIcon, money, textView8, totalClientsLayout);
+          logoutIcon, money, textView8);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

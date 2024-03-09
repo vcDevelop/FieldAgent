@@ -4,13 +4,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class ClientAdapter(private val clients: List<String>,
-                    private val onDetailsButtonClickListener: (String) -> Unit,private val onButtonClickListener: (String) -> Unit,private val onItemClickListener: (String) -> Unit) : RecyclerView.Adapter<ClientAdapter.ClientViewHolder>() {
+                    private val onDetailsButtonClickListener: (String) -> Unit,
+                    private val onDeleteButtonClickListener: (String) -> Unit,
+                    private val onButtonClickListener: (String) -> Unit,
+                    private val onItemClickListener: (String) -> Unit) : RecyclerView.Adapter<ClientAdapter.ClientViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
@@ -61,8 +65,10 @@ class ClientAdapter(private val clients: List<String>,
 
             val button = itemView.findViewById<Button>(R.id.Paymentdash)
             val button1 = itemView.findViewById<Button>(R.id.ReimburseDetails)
+            val button2 = itemView.findViewById<ImageButton>(R.id.Delete)
             button.setOnClickListener { onButtonClickListener(clientId) }
             button1.setOnClickListener { onDetailsButtonClickListener(clientId) }
+            button2.setOnClickListener { onDeleteButtonClickListener(clientId) }
         }
     }
 }

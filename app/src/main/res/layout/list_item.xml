@@ -50,16 +50,29 @@
             android:orientation="horizontal">
             <Button
                 android:id="@+id/Paymentdash"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reimbursement" />
+                android:text="Request" />
 
             <Button
                 android:id="@+id/ReimburseDetails"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="12sp"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reimbursement Details" />
+                android:text="Reimbursement \nDetails" />
+
+            <ImageButton
+                android:id="@+id/Delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/delete" />
+
 
         </LinearLayout>
 

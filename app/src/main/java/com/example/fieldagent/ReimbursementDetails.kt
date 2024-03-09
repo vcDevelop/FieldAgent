@@ -46,9 +46,7 @@ class ReimbursementDetails : AppCompatActivity() {
                 .collection("reimburse")
                 .get()
                 .addOnSuccessListener { result ->
-
                     val reimburseIds = result.documents.map { it.id }
-
                     setupRecyclerView(reimburseIds)
                 }
                 .addOnFailureListener { exception ->
@@ -75,6 +73,7 @@ class ReimbursementDetails : AppCompatActivity() {
                 .delete()
                 .addOnSuccessListener {
                     Toast.makeText(this, "Reimbursement data deleted successfully", Toast.LENGTH_SHORT).show()
+                    retrieveReimbursementDetails()
                 }
                 .addOnFailureListener { exception ->
                     Log.e("DeleteReimbursement", "Error deleting reimbursement data", exception)

@@ -76,7 +76,6 @@ class Dashboard : AppCompatActivity() {
                     val clientCount = result.size()
                     Numberofclients=findViewById(R.id.TotalClients)
                     Numberofclients.text=clientCount.toString()
-                    Toast.makeText(this, "Total Clients: $clientCount", Toast.LENGTH_SHORT).show()
                     val clientIds = result.documents.map { it.id }
                     setupRecyclerView(clientIds)
                 }
@@ -99,11 +98,28 @@ class Dashboard : AppCompatActivity() {
             val intent = Intent(this, ReimbursementDetails::class.java)
             intent.putExtra("clientId", clientId)
             startActivity(intent)
+        },onDeleteButtonClickListener  = { clientId ->
+            deleteReimbursementData(clientId)
+            loadClients()
         }
         )
 
         clientRecyclerView.layoutManager = LinearLayoutManager(this)
         clientRecyclerView.adapter = adapter
+    }
+    private fun deleteReimbursementData(clientId: String) {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            fStore.collection("users").document(userId)
+                .collection("clients").document(clientId)
+                .delete()
+                .addOnSuccessListener {
+                    Toast.makeText(this, "client data deleted successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("DeleteReimbursement", "Error deleting client data", exception)
+                }
+        }
     }
     private fun logoutUser() {
         FirebaseAuth.getInstance().signOut()
