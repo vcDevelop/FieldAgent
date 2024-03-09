@@ -1,36 +1,36 @@
-<h1>Steps To Run Project</h1>
-<ul>
-  <li>
-    <h4>Step 1: Open Android Studio</h4>
-    <p>Click on Get from VCS paste this link: <a href="https://github.com/vcDevelop/Field_Agent.git">https://github.com/vcDevelop/Field_Agent.git</a></p>
-    <img src="https://github.com/vcDevelop/Field_Agent/assets/88608116/218791ce-080a-4af7-a7c9-bdb0320c69f2/WhatsApp%20Image%202024-03-09%20at%204%2015%2011%20PM.jpg" alt="WhatsApp Image 2024-03-09 at 4 15 11 PM">
-  </li>
-<li>
-      <h4>Step 2: Go to menu -> tools -> firebase </h4>
-</li>
-      <li>
-            <h4> Step 3:Click on Authenticate using Google ->Connect to Firebase ->Create Project-></h4>
-        <img src="https://github.com/vcDevelop/Field_Agent/assets/88608116/218791ce-080a-4af7-a7c9-bdb0320c69f2/WhatsApp%20Image%202024-03-09%20at%204%2015%2011%20PM.jpg" alt="WhatsApp Image 2024-03-09 at 4 15 11 PM">
-      </li>
-      <li>
-            <h4> Step 4:In Android Studio Click on Cloud firestore -> get start with cloud firestore -> that go to firestore -><br> Than go to Authentication and click on get started <br>
-             Click on Email/password ->enable and save it -> go back to firebase project click on cloud store -> create Database 
-            </h4>
-      </li>
-      <li>
-            <h4> Step 5: Change the rules (Paste this )->and publish -><br>
-            "rules_version = '2';
-             service cloud.firestore {
-             match /databases/{database}/documents {
-             match /{document=**} {
-             allow read, write: if request.auth != null;
-          }
-         }
-        }" 
+# Steps To Run Project
 
-            </h4>
-      </li>
-      <li>
-            <h4> Step 6: </h4>
-      </li>
-</ul>
+1. **Step 1: Open Android Studio**
+    - Click on `Get from VCS` paste this link: - [https://github.com/vcDevelop/Field_Agent.git](https://github.com/vcDevelop/Field_Agent.git)
+    <br>
+    <img src="https://github.com/vcDevelop/Field_Agent/assets/88608116/c2860402-3841-4a6b-a3cc-29299bcca5f5" alt="Step 3 Image" width="800" height="300">
+
+2. **Step 2: Go to menu -> tools -> firebase**
+    <br>
+
+3. **Step 3: Click on Authenticate using Google -> Connect to Firebase -> Create Project**
+    <br>
+   <img src="https://github.com/vcDevelop/Field_Agent/assets/88608116/fe37c578-5392-4812-aae3-dc57c5cae0fa" alt="Step 1 Image" width="800" height="300">
+
+5. **Step 4: In Android Studio**
+    - Click on `Cloud Firestore` -> `Get started with Cloud Firestore` -> then go to `Firestore`<br>
+      <img src="https://github.com/vcDevelop/Field_Agent/assets/88608116/13b3d3f8-d8b1-4773-8b83-ac06ddec5ca7" alt="Step 3 Image" width="600" height="400">
+    - Then go to `Authentication` and click on `Get started`<br>
+      <img src="https://github.com/vcDevelop/Field_Agent/assets/88608116/5af660a7-7803-4bef-b1af-15a1a525ea27" alt="Step 3 Image" width="600" height="400">
+    - Click on `Email/password` -> enable and save it -> go back to Firebase project -> click on `Cloud Store` -> create Database
+
+6. **Step 5: Change the rules (Paste this) -> and publish**<br>
+   <img src="https://github.com/vcDevelop/Field_Agent/assets/88608116/b378c67c-80d9-4f41-90d5-c309fd926a32" alt="Step 3 Image" width="600" height="400">
+    ```firebase
+    rules_version = '2';
+    service cloud.firestore {
+      match /databases/{database}/documents {
+        match /{document=**} {
+          allow read, write: if request.auth != null;
+        }
+      }
+    }
+    ```
+
+9. **Step 7:  After setting up everything go in files and click "sync project with gradle files"**
+9. **Step 6: Click on the run button in Android Studio**
