@@ -155,6 +155,9 @@ public final class ActivityAddClientBinding implements ViewBinding {
   public final EditText instituteName;
 
   @NonNull
+  public final EditText jurisdictionEditText;
+
+  @NonNull
   public final EditText landmark;
 
   @NonNull
@@ -233,15 +236,15 @@ public final class ActivityAddClientBinding implements ViewBinding {
       @NonNull LinearLayout group4Layout, @NonNull CardView group5CardView,
       @NonNull LinearLayout group5Layout, @NonNull CardView group6CardView,
       @NonNull LinearLayout group6Layout, @NonNull ImageView imageView2,
-      @NonNull EditText instituteName, @NonNull EditText landmark,
-      @NonNull TextView levelOfMaintain, @NonNull Spinner levelofmaintain,
-      @NonNull LinearLayout linearLayout2, @NonNull EditText locality, @NonNull Button nextButton,
-      @NonNull Button prevButton, @NonNull EditText propertyAddressAsPerSite,
-      @NonNull Spinner siteAccess, @NonNull TextView siteVisitDate,
-      @NonNull TextView statusoccupancy, @NonNull Button submitButton, @NonNull TextView textView1,
-      @NonNull TextView textView3, @NonNull TextView textView4, @NonNull TextView textView5,
-      @NonNull TextView textView6, @NonNull TextView textview2, @NonNull EditText widthofroad,
-      @NonNull Spinner yesNoSpinner) {
+      @NonNull EditText instituteName, @NonNull EditText jurisdictionEditText,
+      @NonNull EditText landmark, @NonNull TextView levelOfMaintain,
+      @NonNull Spinner levelofmaintain, @NonNull LinearLayout linearLayout2,
+      @NonNull EditText locality, @NonNull Button nextButton, @NonNull Button prevButton,
+      @NonNull EditText propertyAddressAsPerSite, @NonNull Spinner siteAccess,
+      @NonNull TextView siteVisitDate, @NonNull TextView statusoccupancy,
+      @NonNull Button submitButton, @NonNull TextView textView1, @NonNull TextView textView3,
+      @NonNull TextView textView4, @NonNull TextView textView5, @NonNull TextView textView6,
+      @NonNull TextView textview2, @NonNull EditText widthofroad, @NonNull Spinner yesNoSpinner) {
     this.rootView = rootView;
     this.Address = Address;
     this.Addressmatching = Addressmatching;
@@ -286,6 +289,7 @@ public final class ActivityAddClientBinding implements ViewBinding {
     this.group6Layout = group6Layout;
     this.imageView2 = imageView2;
     this.instituteName = instituteName;
+    this.jurisdictionEditText = jurisdictionEditText;
     this.landmark = landmark;
     this.levelOfMaintain = levelOfMaintain;
     this.levelofmaintain = levelofmaintain;
@@ -593,6 +597,12 @@ public final class ActivityAddClientBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.jurisdiction_edit_text;
+      EditText jurisdictionEditText = ViewBindings.findChildViewById(rootView, id);
+      if (jurisdictionEditText == null) {
+        break missingId;
+      }
+
       id = R.id.landmark;
       EditText landmark = ViewBindings.findChildViewById(rootView, id);
       if (landmark == null) {
@@ -721,10 +731,10 @@ public final class ActivityAddClientBinding implements ViewBinding {
           button, cityLabel, citySpinner, custLoantype, custName, group1CardView, group1Layout,
           group2CardView, group2Layout, group3CardView, group3Layout, group4CardView, group4Layout,
           group5CardView, group5Layout, group6CardView, group6Layout, imageView2, instituteName,
-          landmark, levelOfMaintain, levelofmaintain, linearLayout2, locality, nextButton,
-          prevButton, propertyAddressAsPerSite, siteAccess, siteVisitDate, statusoccupancy,
-          submitButton, textView1, textView3, textView4, textView5, textView6, textview2,
-          widthofroad, yesNoSpinner);
+          jurisdictionEditText, landmark, levelOfMaintain, levelofmaintain, linearLayout2, locality,
+          nextButton, prevButton, propertyAddressAsPerSite, siteAccess, siteVisitDate,
+          statusoccupancy, submitButton, textView1, textView3, textView4, textView5, textView6,
+          textview2, widthofroad, yesNoSpinner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

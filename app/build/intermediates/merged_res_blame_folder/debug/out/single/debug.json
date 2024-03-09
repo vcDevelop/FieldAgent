@@ -60,6 +60,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable-mdpi\\search_icon.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable_delete.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable\\delete.png"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\layout_activity_submitted_cases_screen.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_submitted_cases_screen.xml"
     },
@@ -104,12 +108,24 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable-hdpi\\logo.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\layout_activity_forgot_password.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_forgot_password.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable-xxxhdpi_notification.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable-xxxhdpi\\notification.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable_reject.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable\\reject.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable_logout.jpeg.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable\\logout.jpeg"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable-xxhdpi_voice_call.png.flat",
@@ -146,6 +162,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable-xhdpi_top_background1.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable-xhdpi\\top_background1.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable_approve.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable\\approve.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable-hdpi_ic_1.png.flat",
@@ -388,6 +408,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable-hdpi\\ic_5.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\layout_details_reimburse.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\details_reimburse.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable-xxxhdpi_google.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable-xxxhdpi\\google.png"
     },
@@ -472,6 +496,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable-ldpi\\logo.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable_reject1.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable\\reject1.png"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable-mdpi_video_call.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable-mdpi\\video_call.png"
     },
@@ -514,6 +542,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable-mdpi_logo.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable-mdpi\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\layout_activity_reimbursement_details.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\layout\\activity_reimbursement_details.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable-xxhdpi_top_background.png.flat",
@@ -690,6 +722,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable-xxxhdpi_ic_3.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable-xxxhdpi\\ic_3.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable_plus.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-main-38:\\drawable\\plus.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.2\\com.example.fieldagent.app-merged_res-36:\\drawable-xhdpi_profile.png.flat",

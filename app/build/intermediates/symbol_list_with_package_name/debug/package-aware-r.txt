@@ -1395,6 +1395,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color dark_gray
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -2997,6 +2998,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable agreement
+drawable approve
 drawable avd_hide_password
 drawable avd_show_password
 drawable btn_arraw1
@@ -3029,6 +3031,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable delete
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3072,6 +3075,7 @@ drawable image
 drawable image_1
 drawable image_2
 drawable logo
+drawable logout
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3147,8 +3151,11 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable password
+drawable plus
 drawable profile
 drawable rebutton
+drawable reject
+drawable reject1
 drawable search_edittext
 drawable search_icon
 drawable test_level_drawable
@@ -3168,6 +3175,7 @@ id Addressmatching
 id Age_of_Property
 id AgentName
 id Amenities
+id Amount
 id Anynegativetothelocality
 id BOTTOM_END
 id BOTTOM_START
@@ -3178,9 +3186,10 @@ id Contact_person_Number
 id Contact_person_name
 id East
 id EmailET
+id EmailForgot
 id FUNCTION
+id Forgot_Button
 id Hello
-id Home
 id Jurisdiction
 id Jurisdiction_text
 id META
@@ -3195,6 +3204,9 @@ id OccupiedSince
 id Occupied_by
 id Paymentdash
 id PhnET
+id RecevingBill
+id ReimburseDetails
+id Reject
 id Relationship
 id SHIFT
 id SHOW_ALL
@@ -3202,14 +3214,13 @@ id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
 id Selected_city
-id Setting_dash
 id Signupbutton
 id SiteAccesstext
-id SiteInspectionDate
 id South
 id Statusofoccupancy
 id TOP_END
 id TOP_START
+id TotalClients
 id West
 id accelerate
 id accessibility_action_clickable_span
@@ -3268,7 +3279,6 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id addRowButton
 id address
 id address1
 id address_matching
@@ -3279,6 +3289,7 @@ id aligned
 id all
 id allStates
 id always
+id amountTextView
 id animateToEnd
 id animateToStart
 id antiClockwise
@@ -3294,7 +3305,6 @@ id barrier
 id baseline
 id beginOnFirstDraw
 id beginning
-id bell
 id bestChoice
 id blocking
 id bottom
@@ -3403,6 +3413,8 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id expenseNameEditText
+id expenseNameTextView
 id fade
 id fill
 id fill_horizontal
@@ -3454,15 +3466,10 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageButton
 id imageView
-id imageView1
-id imageView10
-id imageView13
 id imageView2
 id imageView4
 id imageView5
-id imageView8
 id immediateStop
 id included
 id indeterminate
@@ -3474,6 +3481,7 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id jurisdiction_edit_text
 id labeled
 id landmark
 id layout
@@ -3489,10 +3497,10 @@ id linear
 id linearLayout
 id linearLayout2
 id listMode
-id list_dash
 id list_item
 id locality
 id loginButton
+id logout_icon
 id m3_side_sheet
 id marquee
 id masked
@@ -3574,6 +3582,9 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id numberOfDaysEditText
+id numberOfDaysTextView
+id occupied_by
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3616,7 +3627,9 @@ id progress_horizontal
 id property_address_as_per_site
 id radio
 id ratio
+id receivingBillTextView
 id rectangles
+id reimbursementDetailsRecyclerView
 id report_drawn
 id reverseSawtooth
 id right
@@ -3691,7 +3704,6 @@ id submit_area
 id submit_button
 id supportScrollUp
 id tabMode
-id tableLayout
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -3713,20 +3725,12 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
-id textView0
-id textView011
 id textView1
-id textView10
-id textView100
-id textView11
-id textView12
-id textView14
-id textView15
-id textView2
 id textView3
 id textView4
 id textView5
 id textView6
+id textView7
 id textView8
 id text_input_end_icon
 id text_input_error_icon
@@ -3745,6 +3749,7 @@ id title_template
 id toggle
 id top
 id topPanel
+id totalClientsLayout
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -3774,7 +3779,6 @@ id widthofroad
 id withText
 id with_icon
 id withinBounds
-id word
 id wrap
 id wrap_content
 id wrap_content_constrained
@@ -3899,8 +3903,10 @@ layout abc_tooltip
 layout activity_add_client
 layout activity_cust_detail
 layout activity_dashboard
+layout activity_forgot_password
 layout activity_login_screen
 layout activity_main
+layout activity_reimbursement_details
 layout activity_reimbursement_screen
 layout activity_signup_screen
 layout activity_splash_screen
@@ -3923,6 +3929,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout details_reimburse
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout list_item

@@ -114,16 +114,6 @@
                     android:textColor="@color/black"
                     android:textColorHint="@color/black" />
 
-                <!--                <TextView-->
-                <!--                    android:id="@+id/Site_visit_Date"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginTop="10dp"-->
-                <!--                    android:ems="10"-->
-                <!--                    android:textColor="@color/black"-->
-                <!--                    android:hint="Site_Inspection Date"-->
-                <!--                    android:textColorHint="@color/black" />-->
-
 
                 <TextView
                     android:id="@+id/site_visit_Date"
@@ -165,11 +155,12 @@
         <!-- Group 1 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/group2CardView"
-            android:layout_width="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
+            android:background="#EFF0FC"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             app:cardUseCompatPadding="true">
@@ -180,8 +171,7 @@
                 android:layout_height="wrap_content"
                 android:background="#EFF0FC"
                 android:orientation="vertical">
-                <!-- EditText fields for Group 1 details -->
-                <!-- For example: -->
+
                 <TextView
                     android:id="@+id/textview2"
                     android:layout_width="match_parent"
@@ -286,7 +276,20 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:entries="@array/Jurisdiction" />
+
+
                 </LinearLayout>
+                <EditText
+                    android:id="@+id/jurisdiction_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Name of Municipal Body"
+                    android:textColorHint="@color/black"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    />
                 <!-- Add EditText fields for other details in Group 1 -->
             </LinearLayout>
 
@@ -550,8 +553,6 @@
                 android:layout_height="wrap_content"
                 android:background="@color/back"
                 android:orientation="vertical">
-                <!-- EditText fields for Group 1 details -->
-                <!-- For example: -->
 
                 <TextView
                     android:id="@+id/textView5"
@@ -630,8 +631,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/back"
                 android:orientation="vertical">
-                <!-- EditText fields for Group 1 details -->
-                <!-- For example: -->
+
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="match_parent"
@@ -723,8 +723,5 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         app:layout_constraintVertical_bias="0.503" />
 
-    <!-- Add similar CardViews for Group 2, Group 3, Group 4, and Group 5 -->
-
-    <!-- Next Button -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

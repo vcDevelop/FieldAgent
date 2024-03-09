@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="419dp"
+            android:layout_height="200dp"
             android:layout_marginBottom="46dp"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -48,115 +49,71 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text=""
-            android:textColor="#ffffff"
+            android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/Hello"
             app:layout_constraintTop_toBottomOf="@+id/Hello" />
 
         <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintBottom_toBottomOf="@+id/AgentName"
+            android:id="@+id/logout_icon"
+            android:layout_width="56dp"
+            android:layout_height="51dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="8dp"
+            android:src="@drawable/logout"
+            app:layout_constraintBottom_toTopOf="@+id/AgentName"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.886"
+            app:layout_constraintStart_toEndOf="@+id/Hello"
             app:layout_constraintTop_toTopOf="@+id/Hello"
-            app:srcCompat="@drawable/profile" />
+            app:layout_constraintVertical_bias="1.0" />
 
+        <!-- Total Clients Header -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
+            android:id="@+id/totalClientsLayout"
+            android:layout_width="158dp"
+            android:layout_height="77dp"
             android:background="@drawable/white_background"
-
             android:elevation="4dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4">
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/top_banner_background"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    app:srcCompat="@drawable/voice_call" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="Re-assigned"
-                    android:textAlignment="center"
-                    android:textColor="#6672FF"
-                    android:textStyle="bold|italic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/top_banner_background"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    app:srcCompat="@drawable/video_call" />
 
                 <TextView
                     android:id="@+id/textView8"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Approved"
+                    android:paddingLeft="30dp"
+                    android:text="Total Clients"
                     android:textAlignment="center"
                     android:textColor="#6672FF"
                     android:textStyle="bold|italic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/top_banner_background"
-                android:orientation="vertical">
-
-
-
-                <ImageView
-                    android:id="@+id/imageView13"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    app:srcCompat="@drawable/notification" />
 
                 <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="match_parent"
+                    android:id="@+id/TotalClients"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="Notification"
+                    android:background="#87A922"
+                    android:ems="10"
+                    android:text=" 0 "
                     android:textAlignment="center"
-                    android:textColor="#6672FF"
-                    android:textStyle="bold|italic" />
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -188,54 +145,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="#EFF0FC"
-        >
+        android:background="@color/back">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            >
+            android:background="@color/back"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.25"
-                android:background="#EFF0FC"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/Paymentdash"
-                    android:layout_width="37dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/image" />
-
-                <TextView
-                    android:id="@+id/Home"
-                    android:layout_width="103dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Payment"
-                    android:textAlignment="center"
-                    android:textColor="@color/black" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25"
-                android:background="#EFF0FC"
+                android:background="@color/back"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/AddClient"
                     android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_height="34dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/image_1" />
+                    android:background="@color/back"
+                    android:src="@drawable/plus" />
 
                 <TextView
                     android:id="@+id/money"
@@ -243,83 +175,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Add Client"
-                    android:textColor="@color/black"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25"
-                android:orientation="vertical"
-                >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#EFF0FC"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/list_dash"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/image_2" />
-
-                        <TextView
-                            android:id="@+id/bell"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="List"
-                            android:textColor="@color/black"
-                            />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/textView100"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Home" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Home" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25"
-                android:background="#EFF0FC"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/Setting_dash"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_7" />
-
-                <TextView
-                    android:id="@+id/word"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Setting"
                     android:textColor="@color/black" />
             </LinearLayout>
+
         </LinearLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

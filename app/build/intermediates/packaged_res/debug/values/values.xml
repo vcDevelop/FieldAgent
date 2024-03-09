@@ -22,6 +22,7 @@
     </string-array>
     <color name="back">#EFF0FC</color>
     <color name="black">#FF000000</color>
+    <color name="dark_gray">#696969</color>
     <color name="white">#FFFFFFFF</color>
     <string name="Address_matching">Address Matching</string>
     <string name="app_name">Field Agent</string>

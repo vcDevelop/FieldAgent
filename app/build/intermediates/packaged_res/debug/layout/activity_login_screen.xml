@@ -20,6 +20,7 @@
         android:inputType="textPassword"
         android:textColorHint="#3B608C"
         android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailET"
@@ -39,17 +40,17 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/top_background1" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Field Agent"
-        android:textColor="#6672FF"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+    `<TextView
+    android:id="@+id/textView3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:text="Field Agent"
+    android:textColor="#6672FF"
+    android:textSize="40sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
         android:id="@+id/EmailET"
@@ -65,6 +66,7 @@
         android:inputType="textEmailAddress"
         android:textColorHint="#3B608C"
         android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -78,21 +80,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton">
+        >
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/createacount"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="684dp"
+        android:layout_marginTop="668dp"
         android:text="Are you new User?Register"
+        android:textAlignment="center"
         android:textColor="#3b608c"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -107,6 +109,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passET"
         app:srcCompat="@drawable/btn_arraw1" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ForgotPassword"
+        android:text=" Forgot Password!"
+        android:textColor="#3b608c"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/createacount"
+        app:layout_constraintEnd_toEndOf="@+id/passET"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="@+id/passET"
+        app:layout_constraintTop_toBottomOf="@+id/passET"
+        app:layout_constraintVertical_bias="0.103" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

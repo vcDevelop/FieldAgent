@@ -5,9 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,56 +23,38 @@ public final class ActivityReimbursementScreenBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button addRowButton;
+  public final EditText Amount;
+
+  @NonNull
+  public final EditText RecevingBill;
+
+  @NonNull
+  public final Button button;
+
+  @NonNull
+  public final EditText expenseNameEditText;
 
   @NonNull
   public final ImageView imageView2;
 
   @NonNull
-  public final LinearLayout linearLayout2;
+  public final EditText numberOfDaysEditText;
 
   @NonNull
-  public final TableLayout tableLayout;
-
-  @NonNull
-  public final TextView textView0;
-
-  @NonNull
-  public final TextView textView011;
-
-  @NonNull
-  public final TextView textView1;
-
-  @NonNull
-  public final TextView textView11;
-
-  @NonNull
-  public final TextView textView12;
-
-  @NonNull
-  public final TextView textView14;
-
-  @NonNull
-  public final TextView textView15;
+  public final TextView siteVisitDate;
 
   private ActivityReimbursementScreenBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button addRowButton, @NonNull ImageView imageView2,
-      @NonNull LinearLayout linearLayout2, @NonNull TableLayout tableLayout,
-      @NonNull TextView textView0, @NonNull TextView textView011, @NonNull TextView textView1,
-      @NonNull TextView textView11, @NonNull TextView textView12, @NonNull TextView textView14,
-      @NonNull TextView textView15) {
+      @NonNull EditText Amount, @NonNull EditText RecevingBill, @NonNull Button button,
+      @NonNull EditText expenseNameEditText, @NonNull ImageView imageView2,
+      @NonNull EditText numberOfDaysEditText, @NonNull TextView siteVisitDate) {
     this.rootView = rootView;
-    this.addRowButton = addRowButton;
+    this.Amount = Amount;
+    this.RecevingBill = RecevingBill;
+    this.button = button;
+    this.expenseNameEditText = expenseNameEditText;
     this.imageView2 = imageView2;
-    this.linearLayout2 = linearLayout2;
-    this.tableLayout = tableLayout;
-    this.textView0 = textView0;
-    this.textView011 = textView011;
-    this.textView1 = textView1;
-    this.textView11 = textView11;
-    this.textView12 = textView12;
-    this.textView14 = textView14;
-    this.textView15 = textView15;
+    this.numberOfDaysEditText = numberOfDaysEditText;
+    this.siteVisitDate = siteVisitDate;
   }
 
   @Override
@@ -103,9 +84,27 @@ public final class ActivityReimbursementScreenBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.addRowButton;
-      Button addRowButton = ViewBindings.findChildViewById(rootView, id);
-      if (addRowButton == null) {
+      id = R.id.Amount;
+      EditText Amount = ViewBindings.findChildViewById(rootView, id);
+      if (Amount == null) {
+        break missingId;
+      }
+
+      id = R.id.RecevingBill;
+      EditText RecevingBill = ViewBindings.findChildViewById(rootView, id);
+      if (RecevingBill == null) {
+        break missingId;
+      }
+
+      id = R.id.button;
+      Button button = ViewBindings.findChildViewById(rootView, id);
+      if (button == null) {
+        break missingId;
+      }
+
+      id = R.id.expenseNameEditText;
+      EditText expenseNameEditText = ViewBindings.findChildViewById(rootView, id);
+      if (expenseNameEditText == null) {
         break missingId;
       }
 
@@ -115,63 +114,21 @@ public final class ActivityReimbursementScreenBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.linearLayout2;
-      LinearLayout linearLayout2 = ViewBindings.findChildViewById(rootView, id);
-      if (linearLayout2 == null) {
+      id = R.id.numberOfDaysEditText;
+      EditText numberOfDaysEditText = ViewBindings.findChildViewById(rootView, id);
+      if (numberOfDaysEditText == null) {
         break missingId;
       }
 
-      id = R.id.tableLayout;
-      TableLayout tableLayout = ViewBindings.findChildViewById(rootView, id);
-      if (tableLayout == null) {
+      id = R.id.site_visit_Date;
+      TextView siteVisitDate = ViewBindings.findChildViewById(rootView, id);
+      if (siteVisitDate == null) {
         break missingId;
       }
 
-      id = R.id.textView0;
-      TextView textView0 = ViewBindings.findChildViewById(rootView, id);
-      if (textView0 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView011;
-      TextView textView011 = ViewBindings.findChildViewById(rootView, id);
-      if (textView011 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView1;
-      TextView textView1 = ViewBindings.findChildViewById(rootView, id);
-      if (textView1 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView11;
-      TextView textView11 = ViewBindings.findChildViewById(rootView, id);
-      if (textView11 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView12;
-      TextView textView12 = ViewBindings.findChildViewById(rootView, id);
-      if (textView12 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView14;
-      TextView textView14 = ViewBindings.findChildViewById(rootView, id);
-      if (textView14 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView15;
-      TextView textView15 = ViewBindings.findChildViewById(rootView, id);
-      if (textView15 == null) {
-        break missingId;
-      }
-
-      return new ActivityReimbursementScreenBinding((ConstraintLayout) rootView, addRowButton,
-          imageView2, linearLayout2, tableLayout, textView0, textView011, textView1, textView11,
-          textView12, textView14, textView15);
+      return new ActivityReimbursementScreenBinding((ConstraintLayout) rootView, Amount,
+          RecevingBill, button, expenseNameEditText, imageView2, numberOfDaysEditText,
+          siteVisitDate);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

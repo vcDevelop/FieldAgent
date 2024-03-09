@@ -5,11 +5,7 @@ import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.DatePicker
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.cardview.widget.CardView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
@@ -31,7 +27,7 @@ class Add_Client : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
     private var userId: String? = null
-    private lateinit var site_in_date:DatePicker
+    private lateinit var site_in_date: DatePicker
     val data = HashMap<String, Any>()
 
     fun openDatePicker(view: View) {
@@ -43,14 +39,23 @@ class Add_Client : AppCompatActivity() {
         val datePickerDialog = DatePickerDialog(
             this,
             { _, year, month, dayOfMonth ->
-                // Handle the selected date
-                val selectedDate = String.format(Locale.getDefault(), "%02d %s %d", dayOfMonth, getMonthName(month), year)
-                (view as Button).text = selectedDate
-                Toast.makeText(this, selectedDate, Toast.LENGTH_SHORT).show()
-                data["site_inspection_date"] = selectedDate
+                val selectedCalendar = Calendar.getInstance()
+                selectedCalendar.set(year, month, dayOfMonth)
+                val currentDate = Calendar.getInstance()
+
+                if (selectedCalendar <= currentDate) {
+                    val selectedDate = String.format(Locale.getDefault(), "%02d %s %d", dayOfMonth, getMonthName(month), year)
+                    (view as Button).text = selectedDate
+                    Toast.makeText(this, selectedDate, Toast.LENGTH_SHORT).show()
+                    data["site_inspection_date"] = selectedDate
+                }
+                else {
+                    Toast.makeText(this, "Please select a date before or equal to today", Toast.LENGTH_SHORT).show()
+                }
             },
             currentYear, currentMonth, currentDay
         )
+        datePickerDialog.datePicker.maxDate = System.currentTimeMillis()
         datePickerDialog.show()
     }
 
@@ -66,29 +71,23 @@ class Add_Client : AppCompatActivity() {
 
         if (userId != null) {
             val subcollectionPath = "clients"
-            // Example: Get data from EditText in group1CardView
             data["cust_name"] = findViewById<EditText>(R.id.cust_name).text.toString()
             data["institute_name"] = findViewById<EditText>(R.id.institute_name).text.toString()
             data["cust_loantype"] = findViewById<EditText>(R.id.cust_loantype).text.toString()
             data["contact_person_name"] = findViewById<EditText>(R.id.Contact_person_name).text.toString()
             data["contact_person_number"] = findViewById<EditText>(R.id.Contact_person_Number).text.toString()
-//            data["site_inspection_date"] = findViewById<EditText>(R.id.Site_visit_Date).text.toString()
             val button = findViewById<Button>(R.id.button)
+
             button.setOnClickListener {
                 openDatePicker(button)
             }
             data["address"] = findViewById<EditText>(R.id.Address).text.toString()
 
-            // Example: Get data from EditText in group2CardView
             val citySpinner = findViewById<Spinner>(R.id.city_spinner)
             data["selected_city"] = citySpinner.selectedItem.toString()
             data["colony"] = findViewById<EditText>(R.id.Colony).text.toString()
             data["property_address_as_per_site"] = findViewById<EditText>(R.id.property_address_as_per_site).text.toString()
             val yesNoSpinner = findViewById<Spinner>(R.id.yes_no_spinner)
-            val jurisdiction = findViewById<Spinner>(R.id.Jurisdiction)
-            data["jurisdiction"] = jurisdiction.selectedItem.toString()
-
-            // Example: Get data from EditText in group3CardView
             data["landmark"] = findViewById<EditText>(R.id.landmark).text.toString()
             data["locality"] = findViewById<EditText>(R.id.locality).text.toString()
             data["nearest_railway_station"] = findViewById<EditText>(R.id.NearestRailwayStation).text.toString()
@@ -101,27 +100,23 @@ class Add_Client : AppCompatActivity() {
             data["nearest_hospital"] = findViewById<EditText>(R.id.NearestHospital).text.toString()
             data["any_negative_to_locality"] = findViewById<EditText>(R.id.Anynegativetothelocality).text.toString()
 
-            // Example: Get data from EditText in group4CardView
             val statusOfOccupancySpinner = findViewById<Spinner>(R.id.Statusofoccupancy)
             data["status_of_occupancy"] = statusOfOccupancySpinner.selectedItem.toString()
             data["occupied_by"] = findViewById<EditText>(R.id.Occupied_by).text.toString()
             data["relationship"] = findViewById<EditText>(R.id.Relationship).text.toString()
             data["occupied_since"] = findViewById<EditText>(R.id.OccupiedSince).text.toString()
 
-            // Example: Get data from EditText in group5CardView
+
             data["east"] = findViewById<EditText>(R.id.East).text.toString()
             data["west"] = findViewById<EditText>(R.id.West).text.toString()
             data["north"] = findViewById<EditText>(R.id.North).text.toString()
             data["south"] = findViewById<EditText>(R.id.South).text.toString()
 
-            // Example: Get data from EditText in group6CardView
             data["amenities"] = findViewById<EditText>(R.id.Amenities).text.toString()
             val levelOfMaintainSpinner = findViewById<Spinner>(R.id.levelofmaintain)
             data["level_of_maintain"] = levelOfMaintainSpinner.selectedItem.toString()
             data["age_of_property"] = findViewById<EditText>(R.id.Age_of_Property).text.toString()
 
-
-            // Repeat this process for other UI components and CardViews
 
             data["timestamp"] = FieldValue.serverTimestamp()
             data["address_matching"] = yesNoSpinner.selectedItem.toString()
@@ -157,7 +152,6 @@ class Add_Client : AppCompatActivity() {
             findViewById(R.id.group6CardView),
         )
 
-        // Initialize CardViews and button
         group1CardView = findViewById(R.id.group1CardView)
         group2CardView = findViewById(R.id.group2CardView)
         nextButton = findViewById(R.id.nextButton)
@@ -169,7 +163,6 @@ class Add_Client : AppCompatActivity() {
         }
         submit.setOnClickListener{
             saveData()
-
         }
         nextButton.setOnClickListener {
             if (!validateGroup(GroupCount)) {
@@ -191,7 +184,6 @@ class Add_Client : AppCompatActivity() {
             }
         }
 
-        // Set click listener for the prev button
         prevButton.setOnClickListener {
             GroupCount-=1;
             nextButton.isEnabled=true
@@ -207,6 +199,28 @@ class Add_Client : AppCompatActivity() {
                 prevButton.isEnabled=false
             }
         }
+        val jurisdiction = findViewById<Spinner>(R.id.Jurisdiction)
+        val jurisdictionSpinner = findViewById<Spinner>(R.id.Jurisdiction)
+        val jurisdictionEditText = findViewById<EditText>(R.id.jurisdiction_edit_text)
+
+        jurisdictionSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val selectedItem = parent?.getItemAtPosition(position).toString()
+                if (selectedItem == "Yes") {
+                    jurisdictionEditText.visibility = View.VISIBLE
+                    val MunicipalBody=findViewById<EditText>(R.id.jurisdiction_edit_text)
+                    data["jurisdiction"] = MunicipalBody.text.toString();
+                    data["jurisdiction"] = MunicipalBody.text.toString();
+                } else {
+                    jurisdictionEditText.visibility = View.GONE
+                    data["jurisdiction"] = jurisdiction.selectedItem.toString()
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
     }
     private fun validateGroup(GroupC:Int):Boolean{
         when(GroupC){
@@ -216,7 +230,6 @@ class Add_Client : AppCompatActivity() {
                     findViewById<EditText>(R.id.cust_loantype).text.toString().isEmpty() ||
                     findViewById<EditText>(R.id.Contact_person_name).text.toString().isEmpty() ||
                     findViewById<EditText>(R.id.Contact_person_Number).text.toString().isEmpty()||
-//                    findViewById<EditText>(R.id.Site_visit_Date).text.toString().isEmpty() ||
                     findViewById<EditText>(R.id.Address).text.toString().isEmpty() ||
                     !findViewById<EditText>(R.id.cust_name).text.toString().matches(pattern) ||
                     !findViewById<EditText>(R.id.Contact_person_name).text.toString().matches(pattern)
@@ -227,6 +240,8 @@ class Add_Client : AppCompatActivity() {
             }
             1 ->{
                 if (findViewById<EditText>(R.id.Colony).text.toString().isEmpty() ||
+                    findViewById<Spinner>(R.id.Jurisdiction).selectedItem.toString()=="Yes" &&
+                    findViewById<EditText>(R.id.jurisdiction_edit_text).text.isEmpty() ||
                     findViewById<EditText>(R.id.property_address_as_per_site).text.toString().isEmpty()
                 ){
                     Toast.makeText(this, "Please fill in all fields in Property Location Details", Toast.LENGTH_SHORT).show()
@@ -286,7 +301,6 @@ class Add_Client : AppCompatActivity() {
         }
         return true
     }
-    // Method to toggle visibility of a CardView
     private fun toggleCardVisibility(cardView: CardView, isVisible: Boolean) {
         cardView.visibility = if (isVisible) View.VISIBLE else View.GONE
     }

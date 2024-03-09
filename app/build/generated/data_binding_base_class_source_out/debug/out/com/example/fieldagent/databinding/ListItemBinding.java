@@ -4,37 +4,51 @@ package com.example.fieldagent.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.fieldagent.R;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ListItemBinding implements ViewBinding {
   @NonNull
-  private final CardView rootView;
+  private final MaterialCardView rootView;
 
   @NonNull
-  public final TextView address;
+  public final TextView ContactPersonNumber;
+
+  @NonNull
+  public final Button Paymentdash;
+
+  @NonNull
+  public final Button ReimburseDetails;
 
   @NonNull
   public final TextView custName;
 
-  private ListItemBinding(@NonNull CardView rootView, @NonNull TextView address,
-      @NonNull TextView custName) {
+  @NonNull
+  public final TextView instituteName;
+
+  private ListItemBinding(@NonNull MaterialCardView rootView, @NonNull TextView ContactPersonNumber,
+      @NonNull Button Paymentdash, @NonNull Button ReimburseDetails, @NonNull TextView custName,
+      @NonNull TextView instituteName) {
     this.rootView = rootView;
-    this.address = address;
+    this.ContactPersonNumber = ContactPersonNumber;
+    this.Paymentdash = Paymentdash;
+    this.ReimburseDetails = ReimburseDetails;
     this.custName = custName;
+    this.instituteName = instituteName;
   }
 
   @Override
   @NonNull
-  public CardView getRoot() {
+  public MaterialCardView getRoot() {
     return rootView;
   }
 
@@ -59,9 +73,21 @@ public final class ListItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.address;
-      TextView address = ViewBindings.findChildViewById(rootView, id);
-      if (address == null) {
+      id = R.id.Contact_person_Number;
+      TextView ContactPersonNumber = ViewBindings.findChildViewById(rootView, id);
+      if (ContactPersonNumber == null) {
+        break missingId;
+      }
+
+      id = R.id.Paymentdash;
+      Button Paymentdash = ViewBindings.findChildViewById(rootView, id);
+      if (Paymentdash == null) {
+        break missingId;
+      }
+
+      id = R.id.ReimburseDetails;
+      Button ReimburseDetails = ViewBindings.findChildViewById(rootView, id);
+      if (ReimburseDetails == null) {
         break missingId;
       }
 
@@ -71,7 +97,14 @@ public final class ListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ListItemBinding((CardView) rootView, address, custName);
+      id = R.id.institute_name;
+      TextView instituteName = ViewBindings.findChildViewById(rootView, id);
+      if (instituteName == null) {
+        break missingId;
+      }
+
+      return new ListItemBinding((MaterialCardView) rootView, ContactPersonNumber, Paymentdash,
+          ReimburseDetails, custName, instituteName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

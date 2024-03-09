@@ -41,6 +41,9 @@ public final class ActivityCustDetailBinding implements ViewBinding {
   public final TextView East;
 
   @NonNull
+  public final TextView Jurisdiction;
+
+  @NonNull
   public final TextView NearestBusStop;
 
   @NonNull
@@ -59,9 +62,6 @@ public final class ActivityCustDetailBinding implements ViewBinding {
   public final TextView North;
 
   @NonNull
-  public final TextView OccupiedBy;
-
-  @NonNull
   public final TextView OccupiedSince;
 
   @NonNull
@@ -71,10 +71,13 @@ public final class ActivityCustDetailBinding implements ViewBinding {
   public final TextView SelectedCity;
 
   @NonNull
-  public final TextView SiteInspectionDate;
+  public final TextView SiteAccesstext;
 
   @NonNull
   public final TextView South;
+
+  @NonNull
+  public final TextView Statusofoccupancy;
 
   @NonNull
   public final TextView West;
@@ -104,7 +107,13 @@ public final class ActivityCustDetailBinding implements ViewBinding {
   public final TextView landmark;
 
   @NonNull
+  public final TextView levelOfMaintain;
+
+  @NonNull
   public final TextView locality;
+
+  @NonNull
+  public final TextView occupiedBy;
 
   @NonNull
   public final TextView propertyAddressAsPerSite;
@@ -116,16 +125,17 @@ public final class ActivityCustDetailBinding implements ViewBinding {
       @NonNull TextView AgeOfProperty, @NonNull TextView Amenities,
       @NonNull TextView Anynegativetothelocality, @NonNull TextView Colony,
       @NonNull TextView ContactPersonName, @NonNull TextView ContactPersonNumber,
-      @NonNull TextView East, @NonNull TextView NearestBusStop, @NonNull TextView NearestHospital,
-      @NonNull TextView NearestMetroStation, @NonNull TextView NearestRailwayStation,
-      @NonNull TextView NeighborhoodType, @NonNull TextView North, @NonNull TextView OccupiedBy,
-      @NonNull TextView OccupiedSince, @NonNull TextView Relationship,
-      @NonNull TextView SelectedCity, @NonNull TextView SiteInspectionDate, @NonNull TextView South,
-      @NonNull TextView West, @NonNull TextView address, @NonNull TextView address1,
-      @NonNull TextView addressMatching, @NonNull TextView custLoantype,
+      @NonNull TextView East, @NonNull TextView Jurisdiction, @NonNull TextView NearestBusStop,
+      @NonNull TextView NearestHospital, @NonNull TextView NearestMetroStation,
+      @NonNull TextView NearestRailwayStation, @NonNull TextView NeighborhoodType,
+      @NonNull TextView North, @NonNull TextView OccupiedSince, @NonNull TextView Relationship,
+      @NonNull TextView SelectedCity, @NonNull TextView SiteAccesstext, @NonNull TextView South,
+      @NonNull TextView Statusofoccupancy, @NonNull TextView West, @NonNull TextView address,
+      @NonNull TextView address1, @NonNull TextView addressMatching, @NonNull TextView custLoantype,
       @NonNull TextView custName1, @NonNull TextView customerName, @NonNull TextView instituteName,
-      @NonNull TextView landmark, @NonNull TextView locality,
-      @NonNull TextView propertyAddressAsPerSite, @NonNull TextView widthofroad) {
+      @NonNull TextView landmark, @NonNull TextView levelOfMaintain, @NonNull TextView locality,
+      @NonNull TextView occupiedBy, @NonNull TextView propertyAddressAsPerSite,
+      @NonNull TextView widthofroad) {
     this.rootView = rootView;
     this.AgeOfProperty = AgeOfProperty;
     this.Amenities = Amenities;
@@ -134,18 +144,19 @@ public final class ActivityCustDetailBinding implements ViewBinding {
     this.ContactPersonName = ContactPersonName;
     this.ContactPersonNumber = ContactPersonNumber;
     this.East = East;
+    this.Jurisdiction = Jurisdiction;
     this.NearestBusStop = NearestBusStop;
     this.NearestHospital = NearestHospital;
     this.NearestMetroStation = NearestMetroStation;
     this.NearestRailwayStation = NearestRailwayStation;
     this.NeighborhoodType = NeighborhoodType;
     this.North = North;
-    this.OccupiedBy = OccupiedBy;
     this.OccupiedSince = OccupiedSince;
     this.Relationship = Relationship;
     this.SelectedCity = SelectedCity;
-    this.SiteInspectionDate = SiteInspectionDate;
+    this.SiteAccesstext = SiteAccesstext;
     this.South = South;
+    this.Statusofoccupancy = Statusofoccupancy;
     this.West = West;
     this.address = address;
     this.address1 = address1;
@@ -155,7 +166,9 @@ public final class ActivityCustDetailBinding implements ViewBinding {
     this.customerName = customerName;
     this.instituteName = instituteName;
     this.landmark = landmark;
+    this.levelOfMaintain = levelOfMaintain;
     this.locality = locality;
+    this.occupiedBy = occupiedBy;
     this.propertyAddressAsPerSite = propertyAddressAsPerSite;
     this.widthofroad = widthofroad;
   }
@@ -229,6 +242,12 @@ public final class ActivityCustDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Jurisdiction;
+      TextView Jurisdiction = ViewBindings.findChildViewById(rootView, id);
+      if (Jurisdiction == null) {
+        break missingId;
+      }
+
       id = R.id.NearestBusStop;
       TextView NearestBusStop = ViewBindings.findChildViewById(rootView, id);
       if (NearestBusStop == null) {
@@ -265,12 +284,6 @@ public final class ActivityCustDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.Occupied_by;
-      TextView OccupiedBy = ViewBindings.findChildViewById(rootView, id);
-      if (OccupiedBy == null) {
-        break missingId;
-      }
-
       id = R.id.OccupiedSince;
       TextView OccupiedSince = ViewBindings.findChildViewById(rootView, id);
       if (OccupiedSince == null) {
@@ -289,15 +302,21 @@ public final class ActivityCustDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.SiteInspectionDate;
-      TextView SiteInspectionDate = ViewBindings.findChildViewById(rootView, id);
-      if (SiteInspectionDate == null) {
+      id = R.id.SiteAccesstext;
+      TextView SiteAccesstext = ViewBindings.findChildViewById(rootView, id);
+      if (SiteAccesstext == null) {
         break missingId;
       }
 
       id = R.id.South;
       TextView South = ViewBindings.findChildViewById(rootView, id);
       if (South == null) {
+        break missingId;
+      }
+
+      id = R.id.Statusofoccupancy;
+      TextView Statusofoccupancy = ViewBindings.findChildViewById(rootView, id);
+      if (Statusofoccupancy == null) {
         break missingId;
       }
 
@@ -355,9 +374,21 @@ public final class ActivityCustDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.level_of_maintain;
+      TextView levelOfMaintain = ViewBindings.findChildViewById(rootView, id);
+      if (levelOfMaintain == null) {
+        break missingId;
+      }
+
       id = R.id.locality;
       TextView locality = ViewBindings.findChildViewById(rootView, id);
       if (locality == null) {
+        break missingId;
+      }
+
+      id = R.id.occupied_by;
+      TextView occupiedBy = ViewBindings.findChildViewById(rootView, id);
+      if (occupiedBy == null) {
         break missingId;
       }
 
@@ -375,11 +406,11 @@ public final class ActivityCustDetailBinding implements ViewBinding {
 
       return new ActivityCustDetailBinding((ConstraintLayout) rootView, AgeOfProperty, Amenities,
           Anynegativetothelocality, Colony, ContactPersonName, ContactPersonNumber, East,
-          NearestBusStop, NearestHospital, NearestMetroStation, NearestRailwayStation,
-          NeighborhoodType, North, OccupiedBy, OccupiedSince, Relationship, SelectedCity,
-          SiteInspectionDate, South, West, address, address1, addressMatching, custLoantype,
-          custName1, customerName, instituteName, landmark, locality, propertyAddressAsPerSite,
-          widthofroad);
+          Jurisdiction, NearestBusStop, NearestHospital, NearestMetroStation, NearestRailwayStation,
+          NeighborhoodType, North, OccupiedSince, Relationship, SelectedCity, SiteAccesstext, South,
+          Statusofoccupancy, West, address, address1, addressMatching, custLoantype, custName1,
+          customerName, instituteName, landmark, levelOfMaintain, locality, occupiedBy,
+          propertyAddressAsPerSite, widthofroad);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

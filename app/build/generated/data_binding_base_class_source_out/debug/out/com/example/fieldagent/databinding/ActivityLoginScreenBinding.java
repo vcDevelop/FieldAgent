@@ -44,10 +44,13 @@ public final class ActivityLoginScreenBinding implements ViewBinding {
   @NonNull
   public final TextView textView3;
 
+  @NonNull
+  public final TextView textView7;
+
   private ActivityLoginScreenBinding(@NonNull ConstraintLayout rootView, @NonNull EditText EmailET,
       @NonNull TextView createacount, @NonNull ImageView imageView2,
       @NonNull LinearLayout linearLayout, @NonNull ImageButton loginButton,
-      @NonNull EditText passET, @NonNull TextView textView3) {
+      @NonNull EditText passET, @NonNull TextView textView3, @NonNull TextView textView7) {
     this.rootView = rootView;
     this.EmailET = EmailET;
     this.createacount = createacount;
@@ -56,6 +59,7 @@ public final class ActivityLoginScreenBinding implements ViewBinding {
     this.loginButton = loginButton;
     this.passET = passET;
     this.textView3 = textView3;
+    this.textView7 = textView7;
   }
 
   @Override
@@ -127,8 +131,14 @@ public final class ActivityLoginScreenBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textView7;
+      TextView textView7 = ViewBindings.findChildViewById(rootView, id);
+      if (textView7 == null) {
+        break missingId;
+      }
+
       return new ActivityLoginScreenBinding((ConstraintLayout) rootView, EmailET, createacount,
-          imageView2, linearLayout, loginButton, passET, textView3);
+          imageView2, linearLayout, loginButton, passET, textView3, textView7);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

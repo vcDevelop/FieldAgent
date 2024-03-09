@@ -21,38 +21,6 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/top_background2" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/white_background"
-        android:elevation="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.313">
-
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
-    </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="0dp"
@@ -63,66 +31,96 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.103">
+        app:layout_constraintTop_toTopOf="@+id/imageView2">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-            <TableLayout
-                android:id="@+id/tableLayout"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:stretchColumns="*">
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                <TableRow
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#6672FF">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-
+                    <!-- Add your input fields here -->
                     <TextView
-                        android:id="@+id/textView1"
+                        android:id="@+id/site_visit_Date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:hint="Site_Inspection Date"
+                        android:paddingStart="7dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="?android:spinnerStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="openDatePicker"
+                        android:text="JAN 01 2001 "
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/expenseNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Expense Name"
+                        android:textColor="@color/back"
+                        android:textColorHint="@color/black"
+                        />
+
+                    <EditText
+                        android:id="@+id/numberOfDaysEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Number of Days"
+                        android:textColorHint="@color/black"
+                        />
+
+
+                    <EditText
+                        android:id="@+id/RecevingBill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Receving Bill: "
+                        android:textColorHint="@color/black"
+                        />
+
+                    <EditText
+                        android:id="@+id/Amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Amount : "
+                        android:textColorHint="@color/black"
+                        />
+
+                    <!-- Add more fields as needed -->
+
+                    <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date" />
+                        android:text="Request"
+                        android:onClick="onRequestButtonClick"
+                        />
 
-                    <TextView
-                        android:id="@+id/textView0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name of \nExpense" />
-
-                    <TextView
-                        android:id="@+id/textView14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Number of\n days" />
-
-                    <TextView
-                        android:id="@+id/textView15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Receving Bill" />
-
-                    <TextView
-                        android:id="@+id/textView011"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Amount" />
-                </TableRow>
-            </TableLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </ScrollView>
-
-        <Button
-            android:id="@+id/addRowButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="addRow"
-            android:text="Add Row" />
 
     </LinearLayout>
 
