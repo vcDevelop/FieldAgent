@@ -95,6 +95,8 @@ class ReimbursementDetails : AppCompatActivity() {
                 .addOnSuccessListener {
                     Toast.makeText(this, "Reimbursement data deleted successfully", Toast.LENGTH_SHORT).show()
                     retrieveReimbursementDetails()
+                    val intent = Intent(this, Dashboard::class.java)
+                    startActivity(intent)
                 }
                 .addOnFailureListener { exception ->
                     Log.e("DeleteReimbursement", "Error deleting reimbursement data", exception)
@@ -114,11 +116,9 @@ class ReimbursementDetails : AppCompatActivity() {
                     Toast.makeText(this, "Client updated to approved", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, Dashboard::class.java)
                     startActivity(intent)
-                    // Optionally, you can also update the UI or perform any other actions
                 }
                 .addOnFailureListener { exception ->
                     Log.e("AddApprove", "Error updating status", exception)
-                    // Handle failure
                 }
         }
     }

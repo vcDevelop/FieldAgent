@@ -286,7 +286,7 @@
                     android:hint="Name of Municipal Body"
                     android:textColorHint="@color/black"
                     android:inputType="text"
-                    android:textColor="@color/back"
+                    android:textColor="@color/black"
                     android:ems="10"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="20dp"
