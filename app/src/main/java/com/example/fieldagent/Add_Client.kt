@@ -121,7 +121,7 @@ class Add_Client : AppCompatActivity() {
 
             data["timestamp"] = FieldValue.serverTimestamp()
             data["address_matching"] = yesNoSpinner.selectedItem.toString()
-
+            data["status"]="notviewed"
 
             firestore.collection("users").document(userId!!)
                 .collection(subcollectionPath)
@@ -130,6 +130,8 @@ class Add_Client : AppCompatActivity() {
                     Toast.makeText(this, "Data added to Firestore successfully", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this,Dashboard::class.java)
                     startActivity(intent)
+                    finish()
+
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Error adding data to Firestore: $e", Toast.LENGTH_SHORT).show()

@@ -46,10 +46,17 @@ public final class ActivitySignupScreenBinding implements ViewBinding {
   @NonNull
   public final TextView textView3;
 
+  @NonNull
+  public final ImageButton toggleConfirmPassBtn;
+
+  @NonNull
+  public final ImageButton togglePassBtn;
+
   private ActivitySignupScreenBinding(@NonNull ConstraintLayout rootView,
       @NonNull EditText ConfirmpassET, @NonNull EditText EmailET, @NonNull EditText PhnET,
       @NonNull ImageButton Signupbutton, @NonNull ImageView imageView2, @NonNull EditText nameET,
-      @NonNull EditText passET, @NonNull TextView textView3) {
+      @NonNull EditText passET, @NonNull TextView textView3,
+      @NonNull ImageButton toggleConfirmPassBtn, @NonNull ImageButton togglePassBtn) {
     this.rootView = rootView;
     this.ConfirmpassET = ConfirmpassET;
     this.EmailET = EmailET;
@@ -59,6 +66,8 @@ public final class ActivitySignupScreenBinding implements ViewBinding {
     this.nameET = nameET;
     this.passET = passET;
     this.textView3 = textView3;
+    this.toggleConfirmPassBtn = toggleConfirmPassBtn;
+    this.togglePassBtn = togglePassBtn;
   }
 
   @Override
@@ -136,8 +145,21 @@ public final class ActivitySignupScreenBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.toggleConfirmPassBtn;
+      ImageButton toggleConfirmPassBtn = ViewBindings.findChildViewById(rootView, id);
+      if (toggleConfirmPassBtn == null) {
+        break missingId;
+      }
+
+      id = R.id.togglePassBtn;
+      ImageButton togglePassBtn = ViewBindings.findChildViewById(rootView, id);
+      if (togglePassBtn == null) {
+        break missingId;
+      }
+
       return new ActivitySignupScreenBinding((ConstraintLayout) rootView, ConfirmpassET, EmailET,
-          PhnET, Signupbutton, imageView2, nameET, passET, textView3);
+          PhnET, Signupbutton, imageView2, nameET, passET, textView3, toggleConfirmPassBtn,
+          togglePassBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

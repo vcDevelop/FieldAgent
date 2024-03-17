@@ -39,16 +39,5 @@ data class Clients(
     var site_inspection_date:String?=null,
     var status_of_occupancy:String?=null,
     var width_of_road:String?=null,
-
-
-
-
-
-
-
-
-
-
-
-
+    var status:String?=null,
     )

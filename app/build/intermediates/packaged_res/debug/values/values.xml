@@ -27,12 +27,12 @@
     <string name="Address_matching">Address Matching</string>
     <string name="app_name">Field Agent</string>
     <string name="city_prompt">Select City</string>
-    <string name="gcm_defaultSenderId" translatable="false">410080672861</string>
-    <string name="google_api_key" translatable="false">AIzaSyDMipop3sN7xSyK5v_rgGaDZMczHUs4b48</string>
-    <string name="google_app_id" translatable="false">1:410080672861:android:c9d8927682e964bcef21b4</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDMipop3sN7xSyK5v_rgGaDZMczHUs4b48</string>
-    <string name="google_storage_bucket" translatable="false">fieldagent-1bcfc.appspot.com</string>
-    <string name="project_id" translatable="false">fieldagent-1bcfc</string>
+    <string name="gcm_defaultSenderId" translatable="false">393776505145</string>
+    <string name="google_api_key" translatable="false">AIzaSyDKcRCwO8I_UXW7o0YbLNgVPwx2Y6Mq5Kk</string>
+    <string name="google_app_id" translatable="false">1:393776505145:android:f88296bc125ee97c5488e8</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDKcRCwO8I_UXW7o0YbLNgVPwx2Y6Mq5Kk</string>
+    <string name="google_storage_bucket" translatable="false">field-agent-18702.appspot.com</string>
+    <string name="project_id" translatable="false">field-agent-18702</string>
     <style name="Base.Theme.FieldAgent" parent="Theme.Material3.DayNight.NoActionBar">
         
         

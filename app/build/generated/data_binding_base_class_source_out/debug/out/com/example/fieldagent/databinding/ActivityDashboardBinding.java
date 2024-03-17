@@ -32,7 +32,16 @@ public final class ActivityDashboardBinding implements ViewBinding {
   public final TextView Hello;
 
   @NonNull
+  public final TextView TotalApprove;
+
+  @NonNull
   public final TextView TotalClients;
+
+  @NonNull
+  public final TextView TotalOpenClients;
+
+  @NonNull
+  public final TextView TotalReject;
 
   @NonNull
   public final RecyclerView clientRecyclerView;
@@ -53,25 +62,43 @@ public final class ActivityDashboardBinding implements ViewBinding {
   public final TextView money;
 
   @NonNull
+  public final TextView textView10;
+
+  @NonNull
+  public final TextView textView11;
+
+  @NonNull
   public final TextView textView8;
 
+  @NonNull
+  public final TextView textView9;
+
   private ActivityDashboardBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView AddClient,
-      @NonNull TextView AgentName, @NonNull TextView Hello, @NonNull TextView TotalClients,
-      @NonNull RecyclerView clientRecyclerView, @NonNull ConstraintLayout constraintLayout,
-      @NonNull CoordinatorLayout coordinatorLayout, @NonNull ImageView imageView4,
-      @NonNull ImageView logoutIcon, @NonNull TextView money, @NonNull TextView textView8) {
+      @NonNull TextView AgentName, @NonNull TextView Hello, @NonNull TextView TotalApprove,
+      @NonNull TextView TotalClients, @NonNull TextView TotalOpenClients,
+      @NonNull TextView TotalReject, @NonNull RecyclerView clientRecyclerView,
+      @NonNull ConstraintLayout constraintLayout, @NonNull CoordinatorLayout coordinatorLayout,
+      @NonNull ImageView imageView4, @NonNull ImageView logoutIcon, @NonNull TextView money,
+      @NonNull TextView textView10, @NonNull TextView textView11, @NonNull TextView textView8,
+      @NonNull TextView textView9) {
     this.rootView = rootView;
     this.AddClient = AddClient;
     this.AgentName = AgentName;
     this.Hello = Hello;
+    this.TotalApprove = TotalApprove;
     this.TotalClients = TotalClients;
+    this.TotalOpenClients = TotalOpenClients;
+    this.TotalReject = TotalReject;
     this.clientRecyclerView = clientRecyclerView;
     this.constraintLayout = constraintLayout;
     this.coordinatorLayout = coordinatorLayout;
     this.imageView4 = imageView4;
     this.logoutIcon = logoutIcon;
     this.money = money;
+    this.textView10 = textView10;
+    this.textView11 = textView11;
     this.textView8 = textView8;
+    this.textView9 = textView9;
   }
 
   @Override
@@ -119,9 +146,27 @@ public final class ActivityDashboardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.TotalApprove;
+      TextView TotalApprove = ViewBindings.findChildViewById(rootView, id);
+      if (TotalApprove == null) {
+        break missingId;
+      }
+
       id = R.id.TotalClients;
       TextView TotalClients = ViewBindings.findChildViewById(rootView, id);
       if (TotalClients == null) {
+        break missingId;
+      }
+
+      id = R.id.TotalOpenClients;
+      TextView TotalOpenClients = ViewBindings.findChildViewById(rootView, id);
+      if (TotalOpenClients == null) {
+        break missingId;
+      }
+
+      id = R.id.TotalReject;
+      TextView TotalReject = ViewBindings.findChildViewById(rootView, id);
+      if (TotalReject == null) {
         break missingId;
       }
 
@@ -161,15 +206,34 @@ public final class ActivityDashboardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textView10;
+      TextView textView10 = ViewBindings.findChildViewById(rootView, id);
+      if (textView10 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView11;
+      TextView textView11 = ViewBindings.findChildViewById(rootView, id);
+      if (textView11 == null) {
+        break missingId;
+      }
+
       id = R.id.textView8;
       TextView textView8 = ViewBindings.findChildViewById(rootView, id);
       if (textView8 == null) {
         break missingId;
       }
 
+      id = R.id.textView9;
+      TextView textView9 = ViewBindings.findChildViewById(rootView, id);
+      if (textView9 == null) {
+        break missingId;
+      }
+
       return new ActivityDashboardBinding((ConstraintLayout) rootView, AddClient, AgentName, Hello,
-          TotalClients, clientRecyclerView, constraintLayout, coordinatorLayout, imageView4,
-          logoutIcon, money, textView8);
+          TotalApprove, TotalClients, TotalOpenClients, TotalReject, clientRecyclerView,
+          constraintLayout, coordinatorLayout, imageView4, logoutIcon, money, textView10,
+          textView11, textView8, textView9);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

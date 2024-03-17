@@ -26,6 +26,22 @@
         app:layout_constraintTop_toBottomOf="@+id/EmailET"
         app:layout_constraintVertical_bias="0.134" />
 
+    <!-- Toggle button for password -->
+    <ImageButton
+        android:id="@+id/togglePassBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/eye"
+        app:layout_constraintBottom_toBottomOf="@+id/passET"
+        app:layout_constraintEnd_toEndOf="@+id/passET"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="@+id/passET"
+        app:layout_constraintTop_toTopOf="@+id/passET"
+        app:layout_constraintVertical_bias="0.615" />
+
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="412dp"

@@ -1,1 +1,29 @@
-
+{
+  "project_info": {
+    "project_number": "393776505145",
+    "project_id": "field-agent-18702",
+    "storage_bucket": "field-agent-18702.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393776505145:android:f88296bc125ee97c5488e8",
+        "android_client_info": {
+          "package_name": "com.example.fieldagent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKcRCwO8I_UXW7o0YbLNgVPwx2Y6Mq5Kk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

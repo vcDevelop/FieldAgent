@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Calendar
 import java.util.Locale
+import java.util.regex.Pattern
 
 class ReimbursementScreen : AppCompatActivity() {
     private lateinit var fStore: FirebaseFirestore
@@ -18,6 +19,7 @@ class ReimbursementScreen : AppCompatActivity() {
     private lateinit var userId: String
     private lateinit var clientId: String
     private var siteVisitDateEditText = "Date"
+    val pattern = Pattern.compile("^[a-zA-Z ]+$").toRegex()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -119,7 +121,7 @@ class ReimbursementScreen : AppCompatActivity() {
             .collection("clients").document(clientId)
             .collection("reimburse").add(reimbursementData)
             .addOnSuccessListener {
-                Toast.makeText(this, "Request added successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Reimbursement added successfully", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Error adding data: ${e.message}", Toast.LENGTH_SHORT).show()

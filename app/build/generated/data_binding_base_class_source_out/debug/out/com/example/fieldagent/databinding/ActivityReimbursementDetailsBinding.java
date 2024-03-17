@@ -4,6 +4,8 @@ package com.example.fieldagent.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -20,11 +22,24 @@ public final class ActivityReimbursementDetailsBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final Button Approve;
+
+  @NonNull
+  public final Button Reject;
+
+  @NonNull
+  public final LinearLayout buttonContainer;
+
+  @NonNull
   public final RecyclerView reimbursementDetailsRecyclerView;
 
   private ActivityReimbursementDetailsBinding(@NonNull ConstraintLayout rootView,
+      @NonNull Button Approve, @NonNull Button Reject, @NonNull LinearLayout buttonContainer,
       @NonNull RecyclerView reimbursementDetailsRecyclerView) {
     this.rootView = rootView;
+    this.Approve = Approve;
+    this.Reject = Reject;
+    this.buttonContainer = buttonContainer;
     this.reimbursementDetailsRecyclerView = reimbursementDetailsRecyclerView;
   }
 
@@ -55,14 +70,32 @@ public final class ActivityReimbursementDetailsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.Approve;
+      Button Approve = ViewBindings.findChildViewById(rootView, id);
+      if (Approve == null) {
+        break missingId;
+      }
+
+      id = R.id.Reject;
+      Button Reject = ViewBindings.findChildViewById(rootView, id);
+      if (Reject == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonContainer;
+      LinearLayout buttonContainer = ViewBindings.findChildViewById(rootView, id);
+      if (buttonContainer == null) {
+        break missingId;
+      }
+
       id = R.id.reimbursementDetailsRecyclerView;
       RecyclerView reimbursementDetailsRecyclerView = ViewBindings.findChildViewById(rootView, id);
       if (reimbursementDetailsRecyclerView == null) {
         break missingId;
       }
 
-      return new ActivityReimbursementDetailsBinding((ConstraintLayout) rootView,
-          reimbursementDetailsRecyclerView);
+      return new ActivityReimbursementDetailsBinding((ConstraintLayout) rootView, Approve, Reject,
+          buttonContainer, reimbursementDetailsRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

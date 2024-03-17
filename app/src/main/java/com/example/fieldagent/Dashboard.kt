@@ -3,15 +3,19 @@ package com.example.fieldagent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fieldagent.databinding.ActivityDashboardBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.TimerTask
 
 class Dashboard : AppCompatActivity() {
     private lateinit var clientRecyclerView: RecyclerView
@@ -21,7 +25,10 @@ class Dashboard : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var fStore: FirebaseFirestore
     private lateinit var Numberofclients: TextView
+    private lateinit var NumberofApprove: TextView
+    private lateinit var NumberofReject: TextView
     private lateinit var logout_button: ImageView
+    private var isBackPressedOnce = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,19 +37,21 @@ class Dashboard : AppCompatActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         userList = arrayListOf()
         auth = FirebaseAuth.getInstance()
         fStore=FirebaseFirestore.getInstance()
         clientRecyclerView = findViewById(R.id.clientRecyclerView)
         loadClients()
-
+        calculateViewedClients()
+        getClientApprovalCount()
+        getClientRejectCount()
         val userId = auth.currentUser?.uid
         val logoutIcon: ImageView = findViewById(R.id.logout_icon)
         logoutIcon.setOnClickListener {
             logoutUser()
+
         }
-
-
 
         showName = findViewById(R.id.AgentName)
         if(userId != null) {
@@ -65,7 +74,31 @@ class Dashboard : AppCompatActivity() {
             val intent = Intent(this,Add_Client::class.java)
             startActivity(intent)
         }
+
+        onBackPressedDispatcher.addCallback(this) {
+            if (isBackPressedOnce) {
+                // Exit the app on second back press
+                finish()
+            } else {
+                isBackPressedOnce = true
+                loadClients()
+                calculateViewedClients()
+                // Show a toast message or other visual cue (optional)
+                Toast.makeText(this@Dashboard, "Press back again to exit", Toast.LENGTH_SHORT).show()
+
+                // Reset the flag after a delay (optional for double back press)
+                val exitTimer = object : TimerTask() {
+                    override fun run() {
+                        isBackPressedOnce = false
+                    }
+                }
+                val handler = Handler()
+                handler.postDelayed(exitTimer, 2000) // Delay in milliseconds
+            }
+        }
     }
+
+
     private fun loadClients() {
         val userId = auth.currentUser?.uid
         if (userId != null) {
@@ -78,6 +111,7 @@ class Dashboard : AppCompatActivity() {
                     Numberofclients.text=clientCount.toString()
                     val clientIds = result.documents.map { it.id }
                     setupRecyclerView(clientIds)
+                    calculateViewedClients()
                 }
                 .addOnFailureListener { exception ->
                     Log.e("LoadClients", "Error loading clients", exception)
@@ -97,6 +131,7 @@ class Dashboard : AppCompatActivity() {
         },onDetailsButtonClickListener  = { clientId ->
             val intent = Intent(this, ReimbursementDetails::class.java)
             intent.putExtra("clientId", clientId)
+            updateClientStatusAndViewCount(clientId)
             startActivity(intent)
         },onDeleteButtonClickListener  = { clientId ->
             deleteReimbursementData(clientId)
@@ -107,6 +142,85 @@ class Dashboard : AppCompatActivity() {
         clientRecyclerView.layoutManager = LinearLayoutManager(this)
         clientRecyclerView.adapter = adapter
     }
+
+    private fun updateClientStatusAndViewCount(clientId: String) {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            val clientRef = fStore.collection("users").document(userId)
+                .collection("clients").document(clientId)
+            clientRef.update("status", "viewed")
+                .addOnSuccessListener {
+                    Log.d("UpdateStatusAndView", "Client status updated to 'viewed' successfully")
+                }
+                .addOnFailureListener { e ->
+                    Log.e("UpdateStatusAndView", "Error updating client status", e)
+                }
+        }
+    }
+
+    private fun calculateViewedClients() {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            var approvedCount = 0
+            var rejectedCount = 0
+            var viewedCount = 0
+
+            val approvedQuery = fStore.collection("users").document(userId)
+                .collection("clients")
+                .whereEqualTo("status", "approved")
+
+            val rejectedQuery = fStore.collection("users").document(userId)
+                .collection("clients")
+                .whereEqualTo("status", "rejected")
+
+            val viewedQuery = fStore.collection("users").document(userId)
+                .collection("clients")
+                .whereEqualTo("status", "viewed")
+
+            approvedQuery.get()
+                .addOnSuccessListener { querySnapshot ->
+                    approvedCount = querySnapshot.size()
+                    Log.d("ApprovedClientsCount", "Number of approved clients: $approvedCount")
+                    setTotalOpenClients(approvedCount, rejectedCount, viewedCount)
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("ApprovedClientsCount", "Error getting approved clients", exception)
+                }
+
+            rejectedQuery.get()
+                .addOnSuccessListener { querySnapshot ->
+                    rejectedCount = querySnapshot.size()
+                    Log.d("RejectedClientsCount", "Number of rejected clients: $rejectedCount")
+                    setTotalOpenClients(approvedCount, rejectedCount, viewedCount)
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("RejectedClientsCount", "Error getting rejected clients", exception)
+                }
+
+            viewedQuery.get()
+                .addOnSuccessListener { querySnapshot ->
+                    viewedCount = querySnapshot.size()
+                    Log.d("ViewedClientsCount", "Number of viewed clients: $viewedCount")
+                    setTotalOpenClients(approvedCount, rejectedCount, viewedCount)
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("ViewedClientsCount", "Error getting viewed clients", exception)
+                }
+        }
+    }
+
+    private fun setTotalOpenClients(
+        approvedCount: Int,
+        rejectedCount: Int,
+        viewedCount: Int
+    ) {
+        val totalOpenClientsTextView = findViewById<TextView>(R.id.TotalOpenClients)
+        val totalCount = approvedCount + rejectedCount + viewedCount
+        totalOpenClientsTextView.text = totalCount.toString()
+    }
+
+
+
     private fun deleteReimbursementData(clientId: String) {
         val userId = auth.currentUser?.uid
         if (userId != null) {
@@ -127,5 +241,44 @@ class Dashboard : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+    private fun getClientApprovalCount() {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            fStore.collection("users").document(userId)
+                .collection("clients")
+                .whereEqualTo("status", "approved") // Assuming "status" is the field containing the approval status
+                .get()
+                .addOnSuccessListener { querySnapshot ->
+                    val approvedCount = querySnapshot.size()
+                    NumberofApprove=findViewById(R.id.TotalApprove)
+                    NumberofApprove.text=approvedCount.toString()
+                    Log.d("ClientApprovalCount", "Number of approved clients: $approvedCount")
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("ClientApprovalCount", "Error getting approved clients", exception)
+                }
+        }
+    }
+    private fun getClientRejectCount() {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            fStore.collection("users").document(userId)
+                .collection("clients")
+                .whereEqualTo("status", "rejected") // Assuming "status" is the field containing the rejection status
+                .get()
+                .addOnSuccessListener { querySnapshot ->
+                    val rejectedCount = querySnapshot.size()
+                    NumberofReject=findViewById(R.id.TotalReject)
+                    NumberofReject.text=rejectedCount.toString()
+                    Log.d("ClientRejectionCount", "Number of rejected clients: $rejectedCount")
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("ClientRejectionCount", "Error getting rejected clients", exception)
+                }
+        }
+    }
+
+
+
 
 }

@@ -3039,6 +3039,8 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable edittext_background
 drawable email
+drawable eye
+drawable eye_off
 drawable facebook
 drawable google
 drawable googleg_disabled_color_18
@@ -3178,6 +3180,7 @@ id AgentName
 id Amenities
 id Amount
 id Anynegativetothelocality
+id Approve
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
@@ -3222,7 +3225,10 @@ id South
 id Statusofoccupancy
 id TOP_END
 id TOP_START
+id TotalApprove
 id TotalClients
+id TotalOpenClients
+id TotalReject
 id West
 id accelerate
 id accessibility_action_clickable_span
@@ -3320,6 +3326,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id button
+id buttonContainer
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3728,12 +3735,15 @@ id textStart
 id textTop
 id textView
 id textView1
+id textView10
+id textView11
 id textView3
 id textView4
 id textView5
 id textView6
 id textView7
 id textView8
+id textView9
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3749,6 +3759,8 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toggleConfirmPassBtn
+id togglePassBtn
 id top
 id topPanel
 id touch_outside
@@ -3995,8 +4007,9 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
-mipmap ic_launcher
-mipmap ic_launcher_round
+mipmap app_logo
+mipmap app_logo_adaptive_back
+mipmap app_logo_adaptive_fore
 plurals mtrl_badge_content_description
 raw firebase_common_keep
 string Address_matching
