@@ -1,7 +1,7 @@
 # Steps To Run Project
 
 1. **Step 1: Open Android Studio**
-    - Click on `Get from VCS` paste this link: - [https://github.com/vcDevelop/Field_Agent.git](https://github.com/vcDevelop/Field_Agent.git)
+    - Click on `Get from VCS` paste this link: - [[https://github.com/vcDevelop/Field_Agent.git](https://github.com/vcDevelop/Field_Agent.git)](https://github.com/vcDevelop/FieldAgent.git)
     <br>
     <img src="https://github.com/vcDevelop/Field_Agent/assets/88608116/c2860402-3841-4a6b-a3cc-29299bcca5f5" alt="Step 3 Image" width="800" height="300">
 
