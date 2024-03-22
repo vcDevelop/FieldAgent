@@ -34,6 +34,9 @@ public final class ListItemBinding implements ViewBinding {
   public final Button ReimburseDetails;
 
   @NonNull
+  public final TextView Status;
+
+  @NonNull
   public final TextView custName;
 
   @NonNull
@@ -41,12 +44,13 @@ public final class ListItemBinding implements ViewBinding {
 
   private ListItemBinding(@NonNull MaterialCardView rootView, @NonNull TextView ContactPersonNumber,
       @NonNull ImageButton Delete, @NonNull Button Paymentdash, @NonNull Button ReimburseDetails,
-      @NonNull TextView custName, @NonNull TextView instituteName) {
+      @NonNull TextView Status, @NonNull TextView custName, @NonNull TextView instituteName) {
     this.rootView = rootView;
     this.ContactPersonNumber = ContactPersonNumber;
     this.Delete = Delete;
     this.Paymentdash = Paymentdash;
     this.ReimburseDetails = ReimburseDetails;
+    this.Status = Status;
     this.custName = custName;
     this.instituteName = instituteName;
   }
@@ -102,6 +106,12 @@ public final class ListItemBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Status;
+      TextView Status = ViewBindings.findChildViewById(rootView, id);
+      if (Status == null) {
+        break missingId;
+      }
+
       id = R.id.cust_name;
       TextView custName = ViewBindings.findChildViewById(rootView, id);
       if (custName == null) {
@@ -115,7 +125,7 @@ public final class ListItemBinding implements ViewBinding {
       }
 
       return new ListItemBinding((MaterialCardView) rootView, ContactPersonNumber, Delete,
-          Paymentdash, ReimburseDetails, custName, instituteName);
+          Paymentdash, ReimburseDetails, Status, custName, instituteName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -62,10 +62,6 @@ class ReimbursementDetailsAdapter(private val clientId: String, private val reim
                     expenseNameTextView.text = "Error: ${exception.message}"
                 }
 
-            // Set click listener for the item
-//           itemView.setOnClickListener { onItemClickListener(clientId) }
-//
-//           val button1 = itemView.findViewById<Button>(R.id.ReimburseDetails)
 
            val button1 = itemView.findViewById<ImageButton>(R.id.Reject)
 

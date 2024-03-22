@@ -44,9 +44,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reimbursementDetailsRecyclerView">
+        app:layout_constraintTop_toBottomOf="@+id/reimbursementDetailsRecyclerView"
+        tools:ignore="NotSibling">
 
-        <!-- Add your button here -->
         <Button
             android:id="@+id/Approve"
             android:layout_width="wrap_content"

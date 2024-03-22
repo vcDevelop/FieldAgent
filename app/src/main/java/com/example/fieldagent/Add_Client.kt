@@ -74,7 +74,11 @@ class Add_Client : AppCompatActivity() {
             val subcollectionPath = "clients"
             data["cust_name"] = findViewById<EditText>(R.id.cust_name).text.toString()
             data["institute_name"] = findViewById<EditText>(R.id.institute_name).text.toString()
-            data["cust_loantype"] = findViewById<EditText>(R.id.cust_loantype).text.toString()
+
+            val cust_loan=findViewById<Spinner>(R.id.cust_loantype)
+            data["cust_loantype"] = cust_loan.selectedItem.toString()
+
+
             data["contact_person_name"] = findViewById<EditText>(R.id.Contact_person_name).text.toString()
             data["contact_person_number"] = findViewById<EditText>(R.id.Contact_person_Number).text.toString()
             val button = findViewById<Button>(R.id.button)
@@ -118,10 +122,19 @@ class Add_Client : AppCompatActivity() {
             data["level_of_maintain"] = levelOfMaintainSpinner.selectedItem.toString()
             data["age_of_property"] = findViewById<EditText>(R.id.Age_of_Property).text.toString()
 
+            val judi = findViewById<Spinner>(R.id.jurisdiction_spinner)
+            if (judi.selectedItem.toString()=="Yes"){
+                val selected=findViewById<Spinner>(R.id.second_dropdown_spinner)
+                data["jurisdiction"]=selected.selectedItem.toString()
+
+            }else{
+                data["jurisdiction"]=judi.selectedItem.toString()
+            }
+
 
             data["timestamp"] = FieldValue.serverTimestamp()
             data["address_matching"] = yesNoSpinner.selectedItem.toString()
-            data["status"]="notviewed"
+            data["status"]="viewed"
 
             firestore.collection("users").document(userId!!)
                 .collection(subcollectionPath)
@@ -204,21 +217,16 @@ class Add_Client : AppCompatActivity() {
                 prevButton.isEnabled=false
             }
         }
-        val jurisdiction = findViewById<Spinner>(R.id.Jurisdiction)
-        val jurisdictionSpinner = findViewById<Spinner>(R.id.Jurisdiction)
-        val jurisdictionEditText = findViewById<EditText>(R.id.jurisdiction_edit_text)
+        val jurisdictionSpinner = findViewById<Spinner>(R.id.jurisdiction_spinner)
+        val secondDropdownLayout = findViewById<LinearLayout>(R.id.layout_second_dropdown)
 
         jurisdictionSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedItem = parent?.getItemAtPosition(position).toString()
                 if (selectedItem == "Yes") {
-                    jurisdictionEditText.visibility = View.VISIBLE
-                    val MunicipalBody=findViewById<EditText>(R.id.jurisdiction_edit_text)
-                    data["jurisdiction"] = MunicipalBody.text.toString();
-                    data["jurisdiction"] = MunicipalBody.text.toString();
+                    secondDropdownLayout.visibility = View.VISIBLE
                 } else {
-                    jurisdictionEditText.visibility = View.GONE
-                    data["jurisdiction"] = jurisdiction.selectedItem.toString()
+                    secondDropdownLayout.visibility = View.GONE
                 }
             }
 
@@ -226,15 +234,16 @@ class Add_Client : AppCompatActivity() {
 
             }
         }
+
     }
     private fun validateGroup(GroupC:Int):Boolean{
         when(GroupC){
             0 ->{
                 if (findViewById<EditText>(R.id.cust_name).text.toString().isEmpty() ||
                     findViewById<EditText>(R.id.institute_name).text.toString().isEmpty() ||
-                    findViewById<EditText>(R.id.cust_loantype).text.toString().isEmpty() ||
                     findViewById<EditText>(R.id.Contact_person_name).text.toString().isEmpty() ||
                     findViewById<EditText>(R.id.Contact_person_Number).text.toString().isEmpty()||
+                    !isValidPhoneNumber(findViewById<EditText>(R.id.Contact_person_Number).text.toString())||
                     findViewById<EditText>(R.id.Address).text.toString().isEmpty() ||
                     !findViewById<EditText>(R.id.cust_name).text.toString().matches(pattern) ||
                     !findViewById<EditText>(R.id.Contact_person_name).text.toString().matches(pattern)
@@ -245,8 +254,6 @@ class Add_Client : AppCompatActivity() {
             }
             1 ->{
                 if (findViewById<EditText>(R.id.Colony).text.toString().isEmpty() ||
-                    findViewById<Spinner>(R.id.Jurisdiction).selectedItem.toString()=="Yes" &&
-                    findViewById<EditText>(R.id.jurisdiction_edit_text).text.isEmpty() ||
                     findViewById<EditText>(R.id.property_address_as_per_site).text.toString().isEmpty()
                 ){
                     Toast.makeText(this, "Please fill in all fields in Property Location Details", Toast.LENGTH_SHORT).show()
@@ -297,6 +304,13 @@ class Add_Client : AppCompatActivity() {
             }
         }
         return true
+    }
+    private fun isValidPhoneNumber(phone: String): Boolean {
+        val boolean =phone.length == 10 && phone.all { it.isDigit() }
+        if (boolean ==false){
+            Toast.makeText(this,"Invalid contact number!!",Toast.LENGTH_SHORT).show()
+        }
+        return boolean;
     }
     private fun check_Text(edit :EditText): Boolean {
         if(findViewById<EditText>(R.id.cust_name).text.toString().matches(pattern) ) {

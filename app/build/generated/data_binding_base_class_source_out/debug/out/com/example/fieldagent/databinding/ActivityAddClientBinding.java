@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -17,6 +16,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.fieldagent.R;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,76 +27,76 @@ public final class ActivityAddClientBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final EditText Address;
+  public final TextInputEditText Address;
 
   @NonNull
   public final TextView Addressmatching;
 
   @NonNull
-  public final EditText AgeOfProperty;
+  public final TextInputEditText AgeOfProperty;
 
   @NonNull
-  public final EditText Amenities;
+  public final TextInputEditText Amenities;
 
   @NonNull
-  public final EditText Anynegativetothelocality;
+  public final TextInputEditText Anynegativetothelocality;
 
   @NonNull
-  public final EditText Colony;
+  public final TextInputEditText Colony;
 
   @NonNull
-  public final EditText ContactPersonName;
+  public final TextInputEditText ContactPersonName;
 
   @NonNull
-  public final EditText ContactPersonNumber;
+  public final TextInputEditText ContactPersonNumber;
 
   @NonNull
-  public final EditText East;
-
-  @NonNull
-  public final Spinner Jurisdiction;
+  public final TextInputEditText East;
 
   @NonNull
   public final TextView JurisdictionText;
 
   @NonNull
-  public final EditText NearestBusStop;
+  public final TextInputEditText NearestBusStop;
 
   @NonNull
-  public final EditText NearestHospital;
+  public final TextInputEditText NearestHospital;
 
   @NonNull
-  public final EditText NearestMetroStation;
+  public final TextInputEditText NearestMetroStation;
 
   @NonNull
-  public final EditText NearestRailwayStation;
+  public final TextInputEditText NearestRailwayStation;
 
   @NonNull
-  public final EditText NeighborhoodType;
+  public final TextInputEditText NeighborhoodType;
 
   @NonNull
-  public final EditText North;
+  public final TextInputEditText North;
 
   @NonNull
-  public final EditText OccupiedBy;
+  public final TextInputEditText OccupiedBy;
 
   @NonNull
-  public final EditText OccupiedSince;
+  public final TextInputEditText OccupiedSince;
 
   @NonNull
-  public final EditText Relationship;
+  public final TextInputEditText Relationship;
+
+  @NonNull
+  public final TextView SecondDropdownText;
 
   @NonNull
   public final TextView SiteAccesstext;
 
   @NonNull
-  public final EditText South;
+  public final TextInputEditText South;
 
   @NonNull
   public final Spinner Statusofoccupancy;
 
   @NonNull
-  public final EditText West;
+  public final TextInputEditText West;
 
   @NonNull
   public final Button button;
@@ -107,10 +108,13 @@ public final class ActivityAddClientBinding implements ViewBinding {
   public final Spinner citySpinner;
 
   @NonNull
-  public final EditText custLoantype;
+  public final Spinner custLoantype;
 
   @NonNull
-  public final EditText custName;
+  public final TextView custLoantypeText;
+
+  @NonNull
+  public final TextInputEditText custName;
 
   @NonNull
   public final CardView group1CardView;
@@ -152,13 +156,19 @@ public final class ActivityAddClientBinding implements ViewBinding {
   public final ImageView imageView2;
 
   @NonNull
-  public final EditText instituteName;
+  public final TextInputEditText instituteName;
 
   @NonNull
-  public final EditText jurisdictionEditText;
+  public final Spinner jurisdictionSpinner;
 
   @NonNull
-  public final EditText landmark;
+  public final TextInputEditText landmark;
+
+  @NonNull
+  public final LinearLayout layoutJurisdiction;
+
+  @NonNull
+  public final LinearLayout layoutSecondDropdown;
 
   @NonNull
   public final TextView levelOfMaintain;
@@ -170,7 +180,7 @@ public final class ActivityAddClientBinding implements ViewBinding {
   public final LinearLayout linearLayout2;
 
   @NonNull
-  public final EditText locality;
+  public final TextInputEditText locality;
 
   @NonNull
   public final Button nextButton;
@@ -179,7 +189,10 @@ public final class ActivityAddClientBinding implements ViewBinding {
   public final Button prevButton;
 
   @NonNull
-  public final EditText propertyAddressAsPerSite;
+  public final TextInputEditText propertyAddressAsPerSite;
+
+  @NonNull
+  public final Spinner secondDropdownSpinner;
 
   @NonNull
   public final Spinner siteAccess;
@@ -192,6 +205,81 @@ public final class ActivityAddClientBinding implements ViewBinding {
 
   @NonNull
   public final Button submitButton;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutAge;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutAmenities;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutAnyNegativeToLocality;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutColony;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutContactPersonName;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutContactPersonNumber;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutCustName;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutEast;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutInstituteName;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutLandmark;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutLocality;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutNearestBusStop;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutNearestHospital;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutNearestMetroStation;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutNeighborhoodType;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutNorth;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutOccupiedBy;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutOccupiedSince;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutPropertyAddress;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutPropertyAddressAsPerSite;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutRailwayStation;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutRelationship;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutSouth;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutWest;
+
+  @NonNull
+  public final TextInputLayout textInputLayoutWidthOfRoad;
 
   @NonNull
   public final TextView textView1;
@@ -212,39 +300,69 @@ public final class ActivityAddClientBinding implements ViewBinding {
   public final TextView textview2;
 
   @NonNull
-  public final EditText widthofroad;
+  public final TextInputEditText widthofroad;
 
   @NonNull
   public final Spinner yesNoSpinner;
 
-  private ActivityAddClientBinding(@NonNull ConstraintLayout rootView, @NonNull EditText Address,
-      @NonNull TextView Addressmatching, @NonNull EditText AgeOfProperty,
-      @NonNull EditText Amenities, @NonNull EditText Anynegativetothelocality,
-      @NonNull EditText Colony, @NonNull EditText ContactPersonName,
-      @NonNull EditText ContactPersonNumber, @NonNull EditText East, @NonNull Spinner Jurisdiction,
-      @NonNull TextView JurisdictionText, @NonNull EditText NearestBusStop,
-      @NonNull EditText NearestHospital, @NonNull EditText NearestMetroStation,
-      @NonNull EditText NearestRailwayStation, @NonNull EditText NeighborhoodType,
-      @NonNull EditText North, @NonNull EditText OccupiedBy, @NonNull EditText OccupiedSince,
-      @NonNull EditText Relationship, @NonNull TextView SiteAccesstext, @NonNull EditText South,
-      @NonNull Spinner Statusofoccupancy, @NonNull EditText West, @NonNull Button button,
-      @NonNull TextView cityLabel, @NonNull Spinner citySpinner, @NonNull EditText custLoantype,
-      @NonNull EditText custName, @NonNull CardView group1CardView,
-      @NonNull LinearLayout group1Layout, @NonNull CardView group2CardView,
-      @NonNull LinearLayout group2Layout, @NonNull CardView group3CardView,
-      @NonNull LinearLayout group3Layout, @NonNull CardView group4CardView,
-      @NonNull LinearLayout group4Layout, @NonNull CardView group5CardView,
-      @NonNull LinearLayout group5Layout, @NonNull CardView group6CardView,
-      @NonNull LinearLayout group6Layout, @NonNull ImageView imageView2,
-      @NonNull EditText instituteName, @NonNull EditText jurisdictionEditText,
-      @NonNull EditText landmark, @NonNull TextView levelOfMaintain,
-      @NonNull Spinner levelofmaintain, @NonNull LinearLayout linearLayout2,
-      @NonNull EditText locality, @NonNull Button nextButton, @NonNull Button prevButton,
-      @NonNull EditText propertyAddressAsPerSite, @NonNull Spinner siteAccess,
-      @NonNull TextView siteVisitDate, @NonNull TextView statusoccupancy,
-      @NonNull Button submitButton, @NonNull TextView textView1, @NonNull TextView textView3,
-      @NonNull TextView textView4, @NonNull TextView textView5, @NonNull TextView textView6,
-      @NonNull TextView textview2, @NonNull EditText widthofroad, @NonNull Spinner yesNoSpinner) {
+  private ActivityAddClientBinding(@NonNull ConstraintLayout rootView,
+      @NonNull TextInputEditText Address, @NonNull TextView Addressmatching,
+      @NonNull TextInputEditText AgeOfProperty, @NonNull TextInputEditText Amenities,
+      @NonNull TextInputEditText Anynegativetothelocality, @NonNull TextInputEditText Colony,
+      @NonNull TextInputEditText ContactPersonName, @NonNull TextInputEditText ContactPersonNumber,
+      @NonNull TextInputEditText East, @NonNull TextView JurisdictionText,
+      @NonNull TextInputEditText NearestBusStop, @NonNull TextInputEditText NearestHospital,
+      @NonNull TextInputEditText NearestMetroStation,
+      @NonNull TextInputEditText NearestRailwayStation, @NonNull TextInputEditText NeighborhoodType,
+      @NonNull TextInputEditText North, @NonNull TextInputEditText OccupiedBy,
+      @NonNull TextInputEditText OccupiedSince, @NonNull TextInputEditText Relationship,
+      @NonNull TextView SecondDropdownText, @NonNull TextView SiteAccesstext,
+      @NonNull TextInputEditText South, @NonNull Spinner Statusofoccupancy,
+      @NonNull TextInputEditText West, @NonNull Button button, @NonNull TextView cityLabel,
+      @NonNull Spinner citySpinner, @NonNull Spinner custLoantype,
+      @NonNull TextView custLoantypeText, @NonNull TextInputEditText custName,
+      @NonNull CardView group1CardView, @NonNull LinearLayout group1Layout,
+      @NonNull CardView group2CardView, @NonNull LinearLayout group2Layout,
+      @NonNull CardView group3CardView, @NonNull LinearLayout group3Layout,
+      @NonNull CardView group4CardView, @NonNull LinearLayout group4Layout,
+      @NonNull CardView group5CardView, @NonNull LinearLayout group5Layout,
+      @NonNull CardView group6CardView, @NonNull LinearLayout group6Layout,
+      @NonNull ImageView imageView2, @NonNull TextInputEditText instituteName,
+      @NonNull Spinner jurisdictionSpinner, @NonNull TextInputEditText landmark,
+      @NonNull LinearLayout layoutJurisdiction, @NonNull LinearLayout layoutSecondDropdown,
+      @NonNull TextView levelOfMaintain, @NonNull Spinner levelofmaintain,
+      @NonNull LinearLayout linearLayout2, @NonNull TextInputEditText locality,
+      @NonNull Button nextButton, @NonNull Button prevButton,
+      @NonNull TextInputEditText propertyAddressAsPerSite, @NonNull Spinner secondDropdownSpinner,
+      @NonNull Spinner siteAccess, @NonNull TextView siteVisitDate,
+      @NonNull TextView statusoccupancy, @NonNull Button submitButton,
+      @NonNull TextInputLayout textInputLayoutAge,
+      @NonNull TextInputLayout textInputLayoutAmenities,
+      @NonNull TextInputLayout textInputLayoutAnyNegativeToLocality,
+      @NonNull TextInputLayout textInputLayoutColony,
+      @NonNull TextInputLayout textInputLayoutContactPersonName,
+      @NonNull TextInputLayout textInputLayoutContactPersonNumber,
+      @NonNull TextInputLayout textInputLayoutCustName,
+      @NonNull TextInputLayout textInputLayoutEast,
+      @NonNull TextInputLayout textInputLayoutInstituteName,
+      @NonNull TextInputLayout textInputLayoutLandmark,
+      @NonNull TextInputLayout textInputLayoutLocality,
+      @NonNull TextInputLayout textInputLayoutNearestBusStop,
+      @NonNull TextInputLayout textInputLayoutNearestHospital,
+      @NonNull TextInputLayout textInputLayoutNearestMetroStation,
+      @NonNull TextInputLayout textInputLayoutNeighborhoodType,
+      @NonNull TextInputLayout textInputLayoutNorth,
+      @NonNull TextInputLayout textInputLayoutOccupiedBy,
+      @NonNull TextInputLayout textInputLayoutOccupiedSince,
+      @NonNull TextInputLayout textInputLayoutPropertyAddress,
+      @NonNull TextInputLayout textInputLayoutPropertyAddressAsPerSite,
+      @NonNull TextInputLayout textInputLayoutRailwayStation,
+      @NonNull TextInputLayout textInputLayoutRelationship,
+      @NonNull TextInputLayout textInputLayoutSouth, @NonNull TextInputLayout textInputLayoutWest,
+      @NonNull TextInputLayout textInputLayoutWidthOfRoad, @NonNull TextView textView1,
+      @NonNull TextView textView3, @NonNull TextView textView4, @NonNull TextView textView5,
+      @NonNull TextView textView6, @NonNull TextView textview2,
+      @NonNull TextInputEditText widthofroad, @NonNull Spinner yesNoSpinner) {
     this.rootView = rootView;
     this.Address = Address;
     this.Addressmatching = Addressmatching;
@@ -255,7 +373,6 @@ public final class ActivityAddClientBinding implements ViewBinding {
     this.ContactPersonName = ContactPersonName;
     this.ContactPersonNumber = ContactPersonNumber;
     this.East = East;
-    this.Jurisdiction = Jurisdiction;
     this.JurisdictionText = JurisdictionText;
     this.NearestBusStop = NearestBusStop;
     this.NearestHospital = NearestHospital;
@@ -266,6 +383,7 @@ public final class ActivityAddClientBinding implements ViewBinding {
     this.OccupiedBy = OccupiedBy;
     this.OccupiedSince = OccupiedSince;
     this.Relationship = Relationship;
+    this.SecondDropdownText = SecondDropdownText;
     this.SiteAccesstext = SiteAccesstext;
     this.South = South;
     this.Statusofoccupancy = Statusofoccupancy;
@@ -274,6 +392,7 @@ public final class ActivityAddClientBinding implements ViewBinding {
     this.cityLabel = cityLabel;
     this.citySpinner = citySpinner;
     this.custLoantype = custLoantype;
+    this.custLoantypeText = custLoantypeText;
     this.custName = custName;
     this.group1CardView = group1CardView;
     this.group1Layout = group1Layout;
@@ -289,8 +408,10 @@ public final class ActivityAddClientBinding implements ViewBinding {
     this.group6Layout = group6Layout;
     this.imageView2 = imageView2;
     this.instituteName = instituteName;
-    this.jurisdictionEditText = jurisdictionEditText;
+    this.jurisdictionSpinner = jurisdictionSpinner;
     this.landmark = landmark;
+    this.layoutJurisdiction = layoutJurisdiction;
+    this.layoutSecondDropdown = layoutSecondDropdown;
     this.levelOfMaintain = levelOfMaintain;
     this.levelofmaintain = levelofmaintain;
     this.linearLayout2 = linearLayout2;
@@ -298,10 +419,36 @@ public final class ActivityAddClientBinding implements ViewBinding {
     this.nextButton = nextButton;
     this.prevButton = prevButton;
     this.propertyAddressAsPerSite = propertyAddressAsPerSite;
+    this.secondDropdownSpinner = secondDropdownSpinner;
     this.siteAccess = siteAccess;
     this.siteVisitDate = siteVisitDate;
     this.statusoccupancy = statusoccupancy;
     this.submitButton = submitButton;
+    this.textInputLayoutAge = textInputLayoutAge;
+    this.textInputLayoutAmenities = textInputLayoutAmenities;
+    this.textInputLayoutAnyNegativeToLocality = textInputLayoutAnyNegativeToLocality;
+    this.textInputLayoutColony = textInputLayoutColony;
+    this.textInputLayoutContactPersonName = textInputLayoutContactPersonName;
+    this.textInputLayoutContactPersonNumber = textInputLayoutContactPersonNumber;
+    this.textInputLayoutCustName = textInputLayoutCustName;
+    this.textInputLayoutEast = textInputLayoutEast;
+    this.textInputLayoutInstituteName = textInputLayoutInstituteName;
+    this.textInputLayoutLandmark = textInputLayoutLandmark;
+    this.textInputLayoutLocality = textInputLayoutLocality;
+    this.textInputLayoutNearestBusStop = textInputLayoutNearestBusStop;
+    this.textInputLayoutNearestHospital = textInputLayoutNearestHospital;
+    this.textInputLayoutNearestMetroStation = textInputLayoutNearestMetroStation;
+    this.textInputLayoutNeighborhoodType = textInputLayoutNeighborhoodType;
+    this.textInputLayoutNorth = textInputLayoutNorth;
+    this.textInputLayoutOccupiedBy = textInputLayoutOccupiedBy;
+    this.textInputLayoutOccupiedSince = textInputLayoutOccupiedSince;
+    this.textInputLayoutPropertyAddress = textInputLayoutPropertyAddress;
+    this.textInputLayoutPropertyAddressAsPerSite = textInputLayoutPropertyAddressAsPerSite;
+    this.textInputLayoutRailwayStation = textInputLayoutRailwayStation;
+    this.textInputLayoutRelationship = textInputLayoutRelationship;
+    this.textInputLayoutSouth = textInputLayoutSouth;
+    this.textInputLayoutWest = textInputLayoutWest;
+    this.textInputLayoutWidthOfRoad = textInputLayoutWidthOfRoad;
     this.textView1 = textView1;
     this.textView3 = textView3;
     this.textView4 = textView4;
@@ -340,7 +487,7 @@ public final class ActivityAddClientBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.Address;
-      EditText Address = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText Address = ViewBindings.findChildViewById(rootView, id);
       if (Address == null) {
         break missingId;
       }
@@ -352,50 +499,44 @@ public final class ActivityAddClientBinding implements ViewBinding {
       }
 
       id = R.id.Age_of_Property;
-      EditText AgeOfProperty = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText AgeOfProperty = ViewBindings.findChildViewById(rootView, id);
       if (AgeOfProperty == null) {
         break missingId;
       }
 
       id = R.id.Amenities;
-      EditText Amenities = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText Amenities = ViewBindings.findChildViewById(rootView, id);
       if (Amenities == null) {
         break missingId;
       }
 
       id = R.id.Anynegativetothelocality;
-      EditText Anynegativetothelocality = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText Anynegativetothelocality = ViewBindings.findChildViewById(rootView, id);
       if (Anynegativetothelocality == null) {
         break missingId;
       }
 
       id = R.id.Colony;
-      EditText Colony = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText Colony = ViewBindings.findChildViewById(rootView, id);
       if (Colony == null) {
         break missingId;
       }
 
       id = R.id.Contact_person_name;
-      EditText ContactPersonName = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText ContactPersonName = ViewBindings.findChildViewById(rootView, id);
       if (ContactPersonName == null) {
         break missingId;
       }
 
       id = R.id.Contact_person_Number;
-      EditText ContactPersonNumber = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText ContactPersonNumber = ViewBindings.findChildViewById(rootView, id);
       if (ContactPersonNumber == null) {
         break missingId;
       }
 
       id = R.id.East;
-      EditText East = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText East = ViewBindings.findChildViewById(rootView, id);
       if (East == null) {
-        break missingId;
-      }
-
-      id = R.id.Jurisdiction;
-      Spinner Jurisdiction = ViewBindings.findChildViewById(rootView, id);
-      if (Jurisdiction == null) {
         break missingId;
       }
 
@@ -406,56 +547,62 @@ public final class ActivityAddClientBinding implements ViewBinding {
       }
 
       id = R.id.NearestBusStop;
-      EditText NearestBusStop = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText NearestBusStop = ViewBindings.findChildViewById(rootView, id);
       if (NearestBusStop == null) {
         break missingId;
       }
 
       id = R.id.NearestHospital;
-      EditText NearestHospital = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText NearestHospital = ViewBindings.findChildViewById(rootView, id);
       if (NearestHospital == null) {
         break missingId;
       }
 
       id = R.id.NearestMetroStation;
-      EditText NearestMetroStation = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText NearestMetroStation = ViewBindings.findChildViewById(rootView, id);
       if (NearestMetroStation == null) {
         break missingId;
       }
 
       id = R.id.NearestRailwayStation;
-      EditText NearestRailwayStation = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText NearestRailwayStation = ViewBindings.findChildViewById(rootView, id);
       if (NearestRailwayStation == null) {
         break missingId;
       }
 
       id = R.id.NeighborhoodType;
-      EditText NeighborhoodType = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText NeighborhoodType = ViewBindings.findChildViewById(rootView, id);
       if (NeighborhoodType == null) {
         break missingId;
       }
 
       id = R.id.North;
-      EditText North = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText North = ViewBindings.findChildViewById(rootView, id);
       if (North == null) {
         break missingId;
       }
 
       id = R.id.Occupied_by;
-      EditText OccupiedBy = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText OccupiedBy = ViewBindings.findChildViewById(rootView, id);
       if (OccupiedBy == null) {
         break missingId;
       }
 
       id = R.id.OccupiedSince;
-      EditText OccupiedSince = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText OccupiedSince = ViewBindings.findChildViewById(rootView, id);
       if (OccupiedSince == null) {
         break missingId;
       }
 
       id = R.id.Relationship;
-      EditText Relationship = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText Relationship = ViewBindings.findChildViewById(rootView, id);
       if (Relationship == null) {
+        break missingId;
+      }
+
+      id = R.id.SecondDropdown_text;
+      TextView SecondDropdownText = ViewBindings.findChildViewById(rootView, id);
+      if (SecondDropdownText == null) {
         break missingId;
       }
 
@@ -466,7 +613,7 @@ public final class ActivityAddClientBinding implements ViewBinding {
       }
 
       id = R.id.South;
-      EditText South = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText South = ViewBindings.findChildViewById(rootView, id);
       if (South == null) {
         break missingId;
       }
@@ -478,7 +625,7 @@ public final class ActivityAddClientBinding implements ViewBinding {
       }
 
       id = R.id.West;
-      EditText West = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText West = ViewBindings.findChildViewById(rootView, id);
       if (West == null) {
         break missingId;
       }
@@ -502,13 +649,19 @@ public final class ActivityAddClientBinding implements ViewBinding {
       }
 
       id = R.id.cust_loantype;
-      EditText custLoantype = ViewBindings.findChildViewById(rootView, id);
+      Spinner custLoantype = ViewBindings.findChildViewById(rootView, id);
       if (custLoantype == null) {
         break missingId;
       }
 
+      id = R.id.cust_loantype_text;
+      TextView custLoantypeText = ViewBindings.findChildViewById(rootView, id);
+      if (custLoantypeText == null) {
+        break missingId;
+      }
+
       id = R.id.cust_name;
-      EditText custName = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText custName = ViewBindings.findChildViewById(rootView, id);
       if (custName == null) {
         break missingId;
       }
@@ -592,20 +745,32 @@ public final class ActivityAddClientBinding implements ViewBinding {
       }
 
       id = R.id.institute_name;
-      EditText instituteName = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText instituteName = ViewBindings.findChildViewById(rootView, id);
       if (instituteName == null) {
         break missingId;
       }
 
-      id = R.id.jurisdiction_edit_text;
-      EditText jurisdictionEditText = ViewBindings.findChildViewById(rootView, id);
-      if (jurisdictionEditText == null) {
+      id = R.id.jurisdiction_spinner;
+      Spinner jurisdictionSpinner = ViewBindings.findChildViewById(rootView, id);
+      if (jurisdictionSpinner == null) {
         break missingId;
       }
 
       id = R.id.landmark;
-      EditText landmark = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText landmark = ViewBindings.findChildViewById(rootView, id);
       if (landmark == null) {
+        break missingId;
+      }
+
+      id = R.id.layout_jurisdiction;
+      LinearLayout layoutJurisdiction = ViewBindings.findChildViewById(rootView, id);
+      if (layoutJurisdiction == null) {
+        break missingId;
+      }
+
+      id = R.id.layout_second_dropdown;
+      LinearLayout layoutSecondDropdown = ViewBindings.findChildViewById(rootView, id);
+      if (layoutSecondDropdown == null) {
         break missingId;
       }
 
@@ -628,7 +793,7 @@ public final class ActivityAddClientBinding implements ViewBinding {
       }
 
       id = R.id.locality;
-      EditText locality = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText locality = ViewBindings.findChildViewById(rootView, id);
       if (locality == null) {
         break missingId;
       }
@@ -646,8 +811,14 @@ public final class ActivityAddClientBinding implements ViewBinding {
       }
 
       id = R.id.property_address_as_per_site;
-      EditText propertyAddressAsPerSite = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText propertyAddressAsPerSite = ViewBindings.findChildViewById(rootView, id);
       if (propertyAddressAsPerSite == null) {
+        break missingId;
+      }
+
+      id = R.id.second_dropdown_spinner;
+      Spinner secondDropdownSpinner = ViewBindings.findChildViewById(rootView, id);
+      if (secondDropdownSpinner == null) {
         break missingId;
       }
 
@@ -672,6 +843,156 @@ public final class ActivityAddClientBinding implements ViewBinding {
       id = R.id.submit_button;
       Button submitButton = ViewBindings.findChildViewById(rootView, id);
       if (submitButton == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutAge;
+      TextInputLayout textInputLayoutAge = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutAge == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutAmenities;
+      TextInputLayout textInputLayoutAmenities = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutAmenities == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutAnyNegativeToLocality;
+      TextInputLayout textInputLayoutAnyNegativeToLocality = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutAnyNegativeToLocality == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutColony;
+      TextInputLayout textInputLayoutColony = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutColony == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutContactPersonName;
+      TextInputLayout textInputLayoutContactPersonName = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutContactPersonName == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutContactPersonNumber;
+      TextInputLayout textInputLayoutContactPersonNumber = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutContactPersonNumber == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutCustName;
+      TextInputLayout textInputLayoutCustName = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutCustName == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutEast;
+      TextInputLayout textInputLayoutEast = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutEast == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutInstituteName;
+      TextInputLayout textInputLayoutInstituteName = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutInstituteName == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutLandmark;
+      TextInputLayout textInputLayoutLandmark = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutLandmark == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutLocality;
+      TextInputLayout textInputLayoutLocality = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutLocality == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutNearestBusStop;
+      TextInputLayout textInputLayoutNearestBusStop = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutNearestBusStop == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutNearestHospital;
+      TextInputLayout textInputLayoutNearestHospital = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutNearestHospital == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutNearestMetroStation;
+      TextInputLayout textInputLayoutNearestMetroStation = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutNearestMetroStation == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutNeighborhoodType;
+      TextInputLayout textInputLayoutNeighborhoodType = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutNeighborhoodType == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutNorth;
+      TextInputLayout textInputLayoutNorth = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutNorth == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutOccupiedBy;
+      TextInputLayout textInputLayoutOccupiedBy = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutOccupiedBy == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutOccupiedSince;
+      TextInputLayout textInputLayoutOccupiedSince = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutOccupiedSince == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutPropertyAddress;
+      TextInputLayout textInputLayoutPropertyAddress = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutPropertyAddress == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutPropertyAddressAsPerSite;
+      TextInputLayout textInputLayoutPropertyAddressAsPerSite = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutPropertyAddressAsPerSite == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutRailwayStation;
+      TextInputLayout textInputLayoutRailwayStation = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutRailwayStation == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutRelationship;
+      TextInputLayout textInputLayoutRelationship = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutRelationship == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutSouth;
+      TextInputLayout textInputLayoutSouth = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutSouth == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutWest;
+      TextInputLayout textInputLayoutWest = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutWest == null) {
+        break missingId;
+      }
+
+      id = R.id.textInputLayoutWidthOfRoad;
+      TextInputLayout textInputLayoutWidthOfRoad = ViewBindings.findChildViewById(rootView, id);
+      if (textInputLayoutWidthOfRoad == null) {
         break missingId;
       }
 
@@ -712,7 +1033,7 @@ public final class ActivityAddClientBinding implements ViewBinding {
       }
 
       id = R.id.widthofroad;
-      EditText widthofroad = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText widthofroad = ViewBindings.findChildViewById(rootView, id);
       if (widthofroad == null) {
         break missingId;
       }
@@ -725,15 +1046,26 @@ public final class ActivityAddClientBinding implements ViewBinding {
 
       return new ActivityAddClientBinding((ConstraintLayout) rootView, Address, Addressmatching,
           AgeOfProperty, Amenities, Anynegativetothelocality, Colony, ContactPersonName,
-          ContactPersonNumber, East, Jurisdiction, JurisdictionText, NearestBusStop,
-          NearestHospital, NearestMetroStation, NearestRailwayStation, NeighborhoodType, North,
-          OccupiedBy, OccupiedSince, Relationship, SiteAccesstext, South, Statusofoccupancy, West,
-          button, cityLabel, citySpinner, custLoantype, custName, group1CardView, group1Layout,
-          group2CardView, group2Layout, group3CardView, group3Layout, group4CardView, group4Layout,
-          group5CardView, group5Layout, group6CardView, group6Layout, imageView2, instituteName,
-          jurisdictionEditText, landmark, levelOfMaintain, levelofmaintain, linearLayout2, locality,
-          nextButton, prevButton, propertyAddressAsPerSite, siteAccess, siteVisitDate,
-          statusoccupancy, submitButton, textView1, textView3, textView4, textView5, textView6,
+          ContactPersonNumber, East, JurisdictionText, NearestBusStop, NearestHospital,
+          NearestMetroStation, NearestRailwayStation, NeighborhoodType, North, OccupiedBy,
+          OccupiedSince, Relationship, SecondDropdownText, SiteAccesstext, South, Statusofoccupancy,
+          West, button, cityLabel, citySpinner, custLoantype, custLoantypeText, custName,
+          group1CardView, group1Layout, group2CardView, group2Layout, group3CardView, group3Layout,
+          group4CardView, group4Layout, group5CardView, group5Layout, group6CardView, group6Layout,
+          imageView2, instituteName, jurisdictionSpinner, landmark, layoutJurisdiction,
+          layoutSecondDropdown, levelOfMaintain, levelofmaintain, linearLayout2, locality,
+          nextButton, prevButton, propertyAddressAsPerSite, secondDropdownSpinner, siteAccess,
+          siteVisitDate, statusoccupancy, submitButton, textInputLayoutAge,
+          textInputLayoutAmenities, textInputLayoutAnyNegativeToLocality, textInputLayoutColony,
+          textInputLayoutContactPersonName, textInputLayoutContactPersonNumber,
+          textInputLayoutCustName, textInputLayoutEast, textInputLayoutInstituteName,
+          textInputLayoutLandmark, textInputLayoutLocality, textInputLayoutNearestBusStop,
+          textInputLayoutNearestHospital, textInputLayoutNearestMetroStation,
+          textInputLayoutNeighborhoodType, textInputLayoutNorth, textInputLayoutOccupiedBy,
+          textInputLayoutOccupiedSince, textInputLayoutPropertyAddress,
+          textInputLayoutPropertyAddressAsPerSite, textInputLayoutRailwayStation,
+          textInputLayoutRelationship, textInputLayoutSouth, textInputLayoutWest,
+          textInputLayoutWidthOfRoad, textView1, textView3, textView4, textView5, textView6,
           textview2, widthofroad, yesNoSpinner);
     }
     String missingId = rootView.getResources().getResourceName(id);

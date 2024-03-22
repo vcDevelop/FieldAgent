@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/cust_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="8dp"
             android:text="Customer Name"
@@ -75,6 +75,16 @@
 
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/Status"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:textStyle="italic|bold"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status :" />
 
 
         <!-- Add any other relevant information here -->

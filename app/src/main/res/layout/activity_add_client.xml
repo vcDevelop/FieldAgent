@@ -24,7 +24,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="404dp"
-        android:layout_height="563dp"
+        android:layout_height="800dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="32dp"
         android:orientation="vertical"
@@ -48,7 +48,7 @@
             <LinearLayout
                 android:id="@+id/group1Layout"
                 android:layout_width="432dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="40dp"
                 android:background="#EFF0FC"
@@ -64,55 +64,108 @@
                     android:textColor="@color/white"
                     android:textSize="25sp" />
 
-                <EditText
-                    android:id="@+id/cust_name"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutCustName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Customer Name"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Customer Name">
 
-                <EditText
-                    android:id="@+id/institute_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Institute Name"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cust_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
 
-                <EditText
-                    android:id="@+id/cust_loantype"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:textColor="@color/black"
-                    android:hint="Case/Loan Type"
-                    android:textColorHint="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/Contact_person_name"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutInstituteName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:textColor="@color/black"
-                    android:hint="Contact Person Name"
-                    android:inputType="text"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
 
-                <EditText
-                    android:id="@+id/Contact_person_Number"
+                    android:hint="Institute Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/institute_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/cust_loantype_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:text="Case/Loan Type :"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/cust_loantype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:entries="@array/loan_type_options"
+
+
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutContactPersonName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Contact Person Number"
-                    android:inputType="phone"
-                    android:maxLength="10"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Contact Person Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Contact_person_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Contact Person Number -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutContactPersonNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/black"
+                    android:hint="Contact Person Number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Contact_person_Number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
 
                 <TextView
@@ -137,16 +190,22 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     />
-
-                <EditText
-                    android:id="@+id/Address"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPropertyAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Property Address\n "
-                    android:textColor="@color/black"
-                    android:inputType="textPostalAddress"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Property Address">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPostalAddress"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>.
 
             </LinearLayout>
 
@@ -206,25 +265,39 @@
                         android:prompt="@string/city_prompt" />
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/Colony"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutColony"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Colony"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Colony">
 
-                <EditText
-                    android:id="@+id/property_address_as_per_site"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Colony"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPropertyAddressAsPerSite"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Property Address as per site"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Property Address as per site">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/property_address_as_per_site"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -253,46 +326,61 @@
                         android:prompt="@string/Address_matching" />
                 </LinearLayout>
 
-                <LinearLayout
+            <LinearLayout
+                android:id="@+id/layout_jurisdiction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Jurisdiction_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:text="Jurisdiction :"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
+                <Spinner
+                    android:id="@+id/jurisdiction_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:entries="@array/Jurisdiction" /> <!-- Define your options in res/values/arrays.xml -->
+
+                <LinearLayout
+                    android:id="@+id/layout_second_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!-- Add your second dropdown here -->
                     <TextView
-                        android:id="@+id/Jurisdiction_text"
+                        android:id="@+id/SecondDropdown_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
                         android:ems="10"
-                        android:text="Jurisdiction :"
+                        android:text="Local Munciapal Body :"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <Spinner
-                        android:id="@+id/Jurisdiction"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/second_dropdown_spinner"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:entries="@array/Jurisdiction" />
-
-
+                        android:entries="@array/second_dropdown_options" /> <!-- Define your options in res/values/arrays.xml -->
                 </LinearLayout>
-                <EditText
-                    android:id="@+id/jurisdiction_edit_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Name of Municipal Body"
-                    android:textColorHint="@color/black"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:ems="10"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    />
-                <!-- Add EditText fields for other details in Group 1 -->
             </LinearLayout>
+            </LinearLayout>
+
 
         </androidx.cardview.widget.CardView>
 
@@ -325,95 +413,166 @@
                     android:textColor="@color/white"
                     android:textSize="25sp" />
 
-                <EditText
-                    android:id="@+id/landmark"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutLandmark"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nearby Landmark"
-                    android:textColor="@color/black"
-                    android:inputType="text"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Nearby Landmark">
 
-                <EditText
-                    android:id="@+id/locality"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Locality"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/landmark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
 
-                <EditText
-                    android:id="@+id/NearestRailwayStation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nearest Railway Station(Km)"
-                    android:inputType="number"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/NearestMetroStation"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutLocality"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nearest Metro Station(Km)"
-                    android:inputType="number"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Locality">
 
-                <EditText
-                    android:id="@+id/NearestBusStop"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nearest Bus Stop(Km)"
-                    android:inputType="number"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/locality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
 
-                <EditText
-                    android:id="@+id/widthofroad"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Condition and Width of approach Road"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/NearestHospital"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutRailwayStation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Nearest Hospital(Km)"
-                    android:inputType="number"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Nearest Railway Station(Km)">
 
-                <EditText
-                    android:id="@+id/Anynegativetothelocality"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Any negative to the locality"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NearestRailwayStation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
 
-                <EditText
-                    android:id="@+id/NeighborhoodType"
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutNearestMetroStation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Neighborhood Type"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Nearest Metro Station(Km)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NearestMetroStation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutNearestBusStop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/black"
+                    android:hint="Nearest Bus Stop(Km)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NearestBusStop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutWidthOfRoad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/black"
+                    android:hint="Condition and Width of approach Road">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/widthofroad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutNearestHospital"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/black"
+                    android:hint="Nearest Hospital(Km)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NearestHospital"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutAnyNegativeToLocality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/black"
+                    android:hint="Any negative to the locality">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Anynegativetothelocality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutNeighborhoodType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/black"
+                    android:hint="Neighborhood Type">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NeighborhoodType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -500,37 +659,61 @@
                         android:entries="@array/Jurisdiction" />
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/Occupied_by"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutOccupiedBy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Occupied by"
-                    android:textColor="@color/black"
-                    android:inputType="text"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Occupied by">
 
-                <EditText
-                    android:id="@+id/Relationship"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Relationship of occupant with customer"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Occupied_by"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
 
-                <EditText
-                    android:id="@+id/OccupiedSince"
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutRelationship"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Occupied Since (In Years)"
-                    android:textColor="@color/black"
-                    android:inputType="number"
-                    android:maxLength="4"
-                    android:contentDescription="Please enter a 4-digit year between 1900 and 2100"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Relationship of occupant with customer">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Relationship"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutOccupiedSince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/black"
+                    android:hint="Occupied Since (In Years)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/OccupiedSince"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:contentDescription="Please enter a 4-digit year between 1900 and 2100"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
@@ -561,53 +744,85 @@
                     android:layout_height="wrap_content"
                     android:background="@color/black"
                     android:paddingStart="20dp"
-                    android:text="Boundari Details"
+                    android:text="Boundary Details"
                     android:textColor="@color/white"
                     android:textSize="25sp" />
 
-                <EditText
-                    android:id="@+id/East"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:ems="10"
-                    android:hint="East :"
-                    android:textColor="@color/black"
-                    android:inputType="number"
-                    android:textColorHint="@color/black" />
 
-                <EditText
-                    android:id="@+id/West"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutEast"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:ems="10"
-                    android:hint="West :"
-                    android:textColor="@color/black"
-                    android:inputType="number"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="East :">
 
-                <EditText
-                    android:id="@+id/North"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:ems="10"
-                    android:hint="North :"
-                    android:textColor="@color/black"
-                    android:inputType="number"
-                    android:textColorHint="@color/black" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/East"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
 
-                <EditText
-                    android:id="@+id/South"
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutWest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:ems="10"
-                    android:hint="South :"
-                    android:textColor="@color/black"
-                    android:inputType="number"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="West :">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/West"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutNorth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/black"
+                    android:hint="North :">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/North"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutSouth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/black"
+                    android:hint="South :">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/South"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
 
             </LinearLayout>
@@ -642,16 +857,23 @@
                     android:text="Feedback"
                     android:textColor="@color/white"
                     android:textSize="25sp" />
-
-                <EditText
-                    android:id="@+id/Amenities"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutAmenities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:textColor="@color/black"
-                    android:hint="Amenities"
-                    android:inputType="text"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Amenities :">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Amenities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -677,15 +899,23 @@
                         android:entries="@array/maintainacelevel" />
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/Age_of_Property"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:textColor="@color/black"
-                    android:hint="Age of Property(In years):"
-                    android:inputType="number"
-                    android:textColorHint="@color/black" />
+                    app:hintTextColor="@color/black"
+                    android:hint="Age of Property (In years):">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Age_of_Property"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

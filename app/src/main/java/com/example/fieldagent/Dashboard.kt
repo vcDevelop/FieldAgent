@@ -1,6 +1,8 @@
 package com.example.fieldagent
 
 import android.content.Intent
+import android.graphics.Typeface
+import android.health.connect.datatypes.units.Length
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -10,6 +12,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fieldagent.databinding.ActivityDashboardBinding
@@ -78,7 +81,7 @@ class Dashboard : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this) {
             if (isBackPressedOnce) {
                 // Exit the app on second back press
-                finish()
+                finishAffinity() // This will close all activities and exit the app
             } else {
                 isBackPressedOnce = true
                 loadClients()
@@ -96,6 +99,7 @@ class Dashboard : AppCompatActivity() {
                 handler.postDelayed(exitTimer, 2000) // Delay in milliseconds
             }
         }
+
     }
 
 
@@ -112,6 +116,8 @@ class Dashboard : AppCompatActivity() {
                     val clientIds = result.documents.map { it.id }
                     setupRecyclerView(clientIds)
                     calculateViewedClients()
+                    getClientApprovalCount()
+                    getClientRejectCount()
                 }
                 .addOnFailureListener { exception ->
                     Log.e("LoadClients", "Error loading clients", exception)
@@ -128,14 +134,19 @@ class Dashboard : AppCompatActivity() {
             val intent = Intent(this,ReimbursementScreen::class.java)
             intent.putExtra("clientId", clientId)
             startActivity(intent)
+
         },onDetailsButtonClickListener  = { clientId ->
             val intent = Intent(this, ReimbursementDetails::class.java)
             intent.putExtra("clientId", clientId)
             updateClientStatusAndViewCount(clientId)
             startActivity(intent)
+
         },onDeleteButtonClickListener  = { clientId ->
             deleteReimbursementData(clientId)
+            getClientApprovalCount()
+            getClientRejectCount()
             loadClients()
+
         }
         )
 
@@ -148,15 +159,25 @@ class Dashboard : AppCompatActivity() {
         if (userId != null) {
             val clientRef = fStore.collection("users").document(userId)
                 .collection("clients").document(clientId)
-            clientRef.update("status", "viewed")
-                .addOnSuccessListener {
-                    Log.d("UpdateStatusAndView", "Client status updated to 'viewed' successfully")
+            clientRef.get()
+                .addOnSuccessListener { documentSnapshot ->
+                    val status = documentSnapshot.getString("status")
+                    if (status == "viewed") {
+                        clientRef.update("status", "viewed")
+                            .addOnSuccessListener {
+                                Log.d("UpdateStatusAndView", "Client status updated to 'viewed' successfully")
+                            }
+                            .addOnFailureListener { e ->
+                                Log.e("UpdateStatusAndView", "Error updating client status", e)
+                            }
+                    }
                 }
                 .addOnFailureListener { e ->
-                    Log.e("UpdateStatusAndView", "Error updating client status", e)
+                    Log.e("UpdateStatusAndView", "Error getting client status", e)
                 }
         }
     }
+
 
     private fun calculateViewedClients() {
         val userId = auth.currentUser?.uid
@@ -164,6 +185,7 @@ class Dashboard : AppCompatActivity() {
             var approvedCount = 0
             var rejectedCount = 0
             var viewedCount = 0
+            var completedQueries = 0 // Counter to track completed queries
 
             val approvedQuery = fStore.collection("users").document(userId)
                 .collection("clients")
@@ -177,37 +199,46 @@ class Dashboard : AppCompatActivity() {
                 .collection("clients")
                 .whereEqualTo("status", "viewed")
 
-            approvedQuery.get()
-                .addOnSuccessListener { querySnapshot ->
-                    approvedCount = querySnapshot.size()
-                    Log.d("ApprovedClientsCount", "Number of approved clients: $approvedCount")
-                    setTotalOpenClients(approvedCount, rejectedCount, viewedCount)
-                }
-                .addOnFailureListener { exception ->
-                    Log.e("ApprovedClientsCount", "Error getting approved clients", exception)
-                }
+            // Execute all queries concurrently
+            approvedQuery.get().addOnSuccessListener { querySnapshot ->
+                approvedCount = querySnapshot.size()
+                completedQueries++
+                updateUIIfAllQueriesCompleted(approvedCount, rejectedCount, viewedCount, completedQueries)
+            }.addOnFailureListener { exception ->
+                Log.e("ApprovedClientsCount", "Error getting approved clients", exception)
+            }
 
-            rejectedQuery.get()
-                .addOnSuccessListener { querySnapshot ->
-                    rejectedCount = querySnapshot.size()
-                    Log.d("RejectedClientsCount", "Number of rejected clients: $rejectedCount")
-                    setTotalOpenClients(approvedCount, rejectedCount, viewedCount)
-                }
-                .addOnFailureListener { exception ->
-                    Log.e("RejectedClientsCount", "Error getting rejected clients", exception)
-                }
+            rejectedQuery.get().addOnSuccessListener { querySnapshot ->
+                rejectedCount = querySnapshot.size()
+                completedQueries++
+                updateUIIfAllQueriesCompleted(approvedCount, rejectedCount, viewedCount, completedQueries)
+            }.addOnFailureListener { exception ->
+                Log.e("RejectedClientsCount", "Error getting rejected clients", exception)
+            }
 
-            viewedQuery.get()
-                .addOnSuccessListener { querySnapshot ->
-                    viewedCount = querySnapshot.size()
-                    Log.d("ViewedClientsCount", "Number of viewed clients: $viewedCount")
-                    setTotalOpenClients(approvedCount, rejectedCount, viewedCount)
-                }
-                .addOnFailureListener { exception ->
-                    Log.e("ViewedClientsCount", "Error getting viewed clients", exception)
-                }
+            viewedQuery.get().addOnSuccessListener { querySnapshot ->
+                viewedCount = querySnapshot.size()
+                completedQueries++
+                updateUIIfAllQueriesCompleted(approvedCount, rejectedCount, viewedCount, completedQueries)
+            }.addOnFailureListener { exception ->
+                Log.e("ViewedClientsCount", "Error getting viewed clients", exception)
+            }
         }
     }
+
+    private fun updateUIIfAllQueriesCompleted(
+        approvedCount: Int,
+        rejectedCount: Int,
+        viewedCount: Int,
+        completedQueries: Int
+    ) {
+        // Check if all queries have completed
+        if (completedQueries == 3) {
+            // Update the UI with the counts
+            setTotalOpenClients(approvedCount, rejectedCount, viewedCount)
+        }
+    }
+
 
     private fun setTotalOpenClients(
         approvedCount: Int,
@@ -215,9 +246,15 @@ class Dashboard : AppCompatActivity() {
         viewedCount: Int
     ) {
         val totalOpenClientsTextView = findViewById<TextView>(R.id.TotalOpenClients)
-        val totalCount = approvedCount + rejectedCount + viewedCount
-        totalOpenClientsTextView.text = totalCount.toString()
+
+        // Calculate the total count of open clients
+        val totalOpenCount =viewedCount - (approvedCount + rejectedCount)
+
+
+        // Update the TextView with the total count of open clients
+        totalOpenClientsTextView.text = viewedCount.toString()
     }
+
 
 
 

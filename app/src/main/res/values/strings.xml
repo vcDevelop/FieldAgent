@@ -8,6 +8,17 @@
         <item>Yes</item>
         <item>No</item>
     </string-array>
+    <string-array name="loan_type_options">
+        <item>HL</item>
+        <item>PL</item>
+        <item>BL</item>
+        <item>LAP</item>
+    </string-array>
+
+    <string-array name="second_dropdown_options">
+        <item>Mumbai</item>
+        <item>Pimpri</item>
+    </string-array>
 
     <string-array name="maintainacelevel">
         <item>Low</item>

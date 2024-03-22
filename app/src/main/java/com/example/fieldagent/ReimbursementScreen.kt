@@ -122,6 +122,9 @@ class ReimbursementScreen : AppCompatActivity() {
             .collection("reimburse").add(reimbursementData)
             .addOnSuccessListener {
                 Toast.makeText(this, "Reimbursement added successfully", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this,Dashboard::class.java)
+                startActivity(intent)
+
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Error adding data: ${e.message}", Toast.LENGTH_SHORT).show()
