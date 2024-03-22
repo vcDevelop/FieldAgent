@@ -24,7 +24,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="404dp"
-        android:layout_height="800dp"
+        android:layout_height="700dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="32dp"
         android:orientation="vertical"
@@ -85,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:hintTextColor="@color/black"
-                    android:textColor="@color/black"
+
                     android:hint="Institute Name">
 
                     <com.google.android.material.textfield.TextInputEditText
